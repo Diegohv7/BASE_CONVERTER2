@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BASE CONVERTER</string>
+    <string name="botonconversiones">Conversiones</string>
+    <string name="botonoperaciones">Operaciones</string>
+</resources>
