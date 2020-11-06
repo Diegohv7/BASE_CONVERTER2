@@ -126,14 +126,11 @@ public class Converter {
         return n1;
         // return n1;
     }
+    //copiar caracteres desde una posicion hasta otra cadena2=cadena1.substring(0,2);
+    //copiar caracteres desde una posicion hasta el final de la cadena: cadena2=cadena1.substring(posicion);
     String limpiar(String n1){
-        int l=n1.length();
-        String n2="";
-        while (l>1){
-            n2=n1.charAt(l-1)+n2;
-            l--;
-        }
-        return n2;
+        n1=n1.substring(1);
+        return n1;
     }
     //dejar esto
     String suma(String n1,String n2,String b){
