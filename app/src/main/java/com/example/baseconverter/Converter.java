@@ -112,7 +112,7 @@ public class Converter {
         }
         return n2;
     }
-
+    //hola
     String convertircomplemento(String n1,String b1,String b2){
         if (b1!="10")
             n1=adecimal(n1,b1);
