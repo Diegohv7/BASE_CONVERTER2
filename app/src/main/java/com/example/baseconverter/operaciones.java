@@ -19,7 +19,6 @@ public class operaciones extends AppCompatActivity {
         n2 =(EditText)findViewById(R.id.editText5);
         b =(EditText)findViewById(R.id.editText6);
         resultado=(TextView)findViewById(R.id.textView6) ;
-
     }
     int ainteger(String n){
         return Integer.parseInt(n);
@@ -86,6 +85,7 @@ public class operaciones extends AppCompatActivity {
         }
         return astringlog(nu) ;
     }
+    //dejar esto
     String suma(String n1,String n2,String b){
         String n11=adecimal(n1,b);
         String n22=adecimal(n2,b);
