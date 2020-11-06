@@ -128,6 +128,8 @@ public class Converter {
     }
     //copiar caracteres desde una posicion hasta otra cadena2=cadena1.substring(0,2);
     //copiar caracteres desde una posicion hasta el final de la cadena: cadena2=cadena1.substring(posicion);
+    //copiar caracteres desde una posicion hasta otra cadena2=cadena1.substring(0,2);
+    //copiar caracteres desde una posicion hasta el final de la cadena: cadena2=cadena1.substring(posicion);
     String limpiar(String n1){
         n1=n1.substring(1);
         return n1;
