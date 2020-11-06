@@ -68,6 +68,7 @@ public class Converter {
         }
         return astringlog(nu) ;
     }
+
     //convertir base a base
     String conversion(String n1,String b1,String b2){
         if (ainteger(b1) !=10)
@@ -133,5 +134,34 @@ public class Converter {
             l--;
         }
         return n2;
+    }
+    //dejar esto
+    String suma(String n1,String n2,String b){
+        String n11=adecimal(n1,b);
+        String n22=adecimal(n2,b);
+        long r=along(n11)+along(n22);
+        String res=abase(astringlog(r),b);
+        return res;
+    }
+    String resta(String n1,String n2,String b){
+        String n11=adecimal(n1,b);
+        String n22=adecimal(n2,b);
+        Long r=along(n11)-along(n22);
+        String res=abase(astringlog(r),b);
+        return res;
+    }
+    String multiplicacion(String n1,String n2,String b){
+        String n11=adecimal(n1,b);
+        String n22=adecimal(n2,b);
+        Long r=along(n11)*along(n22);
+        String res=abase(astringlog(r),b);
+        return res;
+    }
+    String division(String n1,String n2,String b){
+        String n11=adecimal(n1,b);
+        String n22=adecimal(n2,b);
+        Long r=along(n11)/along(n22);
+        String res=abase(astringlog(r),b);
+        return res;
     }
 }
