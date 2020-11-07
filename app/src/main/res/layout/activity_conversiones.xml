@@ -36,6 +36,18 @@
         tools:layout_editor_absoluteX="121dp"
         tools:layout_editor_absoluteY="270dp" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="5dp"
+        android:text="Base Actual" />
+
     <EditText
         android:id="@+id/editText4"
         android:layout_width="50dp"
@@ -51,6 +63,48 @@
         android:inputType="number"
         tools:layout_editor_absoluteX="213dp"
         tools:layout_editor_absoluteY="271dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText4"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginRight="73dp"
+        android:text="Base Destino" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/button2"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="9dp"
+        android:layout_toEndOf="@+id/button8"
+        android:layout_toRightOf="@+id/button8"
+        android:ems="10"
+        android:hint="Max 60"
+        android:inputType="number"
+        android:textSize="13sp"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="271dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText8"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/button8"
+        android:layout_toRightOf="@+id/button8"
+        android:text="Cant. Bits"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -76,30 +130,6 @@
         android:layout_marginTop="122dp"
         android:onClick="convertir"
         android:text="Convertir" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText3"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="82dp"
-        android:layout_marginLeft="82dp"
-        android:layout_marginTop="5dp"
-        android:text="Base Actual" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText4"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginRight="73dp"
-        android:text="Base Destino" />
 
     <Button
         android:id="@+id/button8"

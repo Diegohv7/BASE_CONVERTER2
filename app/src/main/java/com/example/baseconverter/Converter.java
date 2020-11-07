@@ -69,12 +69,13 @@ public class Converter {
         }
         return astringlog(nu) ;
     }
-
     //convertir base a base
     String conversion(String n1,String b1,String b2){
-        if (ainteger(b1) !=10)
-            n1=adecimal(n1,b1);
-        return abase(n1,b2);
+        if (ainteger(b1)!=ainteger(b2))
+            if (ainteger(b1)!=10)
+                n1=adecimal(n1,b1);
+            n1=abase(n1,b2);
+        return n1;
     }
     int buscar(String n1){
         int l=n1.length();
@@ -89,18 +90,21 @@ public class Converter {
         }
         return pos;
     }
-    String ceros(String n1){
-        int l=16-n1.length();
-        String n2=n1;
-        while (l>0){
-            n2='0'+n2;
-            l--;
+    String definir_bits(String n1,String bit){
+        int l;
+        if (ainteger(bit)>n1.length()){
+            l=ainteger(bit)-n1.length();
+            while (l>0){
+                n1='0'+n1;
+                l--;
+            }
+        }else{
+            n1=n1.substring(n1.length()-ainteger(bit));
         }
-        return n2;
+        return n1;
     }
     //complemeanto a 2
     String complemento(String n1){
-        n1=ceros(n1);
         int l=n1.length();
         String n2="";
         int pos=buscar(n1);
@@ -113,23 +117,13 @@ public class Converter {
         }
         return n2;
     }
-    String complemento2(String n1){
-        //n1=ceros(n1);
-      //  n1='0'+n1;
-        int l=n1.length();
-        String n2="";
-        int pos=buscar(n1);
-        while (l>0){
-            if (l < pos) {
-                n2=(n1.charAt(l-1)=='1')?'0'+n2:'1'+n2;
-            } else
-                n2 = n1.charAt(l - 1) + n2;
-            l--;
-        }
-        return n2;
-    }
-    String convertirnegativo(String n1,String b1,String b2){
-        if (ainteger(b1)!=10)
+    String convertirnegativo(String n1,String b1,String b2,String bit){
+        n1=conversion(n1,b1,"2");
+        n1=definir_bits(n1,bit);
+        if ((ainteger(b1)==10)|(ainteger(b2)==10))
+            n1=complemento(n1);
+        n1=conversion(n1,"2",b2);
+     /*   if (ainteger(b1)!=10)
             n1=adecimal(n1,b1);
         n1=abase(n1,"2");
         if ((ainteger(b1)==10))
@@ -139,7 +133,7 @@ public class Converter {
                 n1=complemento2(n1);
             n1=adecimal(n1,"2");
             n1 = abase(n1, b2);
-        }
+        }*/
         return n1;
     }
     //mal
