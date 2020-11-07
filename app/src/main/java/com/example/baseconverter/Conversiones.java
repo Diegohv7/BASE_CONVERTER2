@@ -47,10 +47,9 @@ public class Conversiones extends AppCompatActivity  {
             if ((nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)) {
                 if ((numero.charAt(0)) == '-')
                     numero = nro.limpiar(numero);
-                result = nro.convertircomplemento(numero, base1, base2) ;
+                result = nro.convertirnegativo(numero, base1, base2) ;
             }
         }
-        if (nro.ainteger(base2)==10)
             result ='-'+result;
         resultado .setText(result);
     }
