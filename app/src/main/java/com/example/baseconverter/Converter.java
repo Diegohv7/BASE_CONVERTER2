@@ -13,6 +13,7 @@ public class Converter {
     String astringint(int n){
         return String.valueOf(n);
     }
+
     //convertir decimal a base b
     String abase(String n1,String  b1){
         String a="0123456789ABCDEF";
@@ -99,7 +100,7 @@ public class Converter {
     }
     //complemeanto a 2
     String complemento(String n1){
-      //  n1=ceros(n1);
+        n1=ceros(n1);
         int l=n1.length();
         String n2="";
         int pos=buscar(n1);
@@ -112,21 +113,53 @@ public class Converter {
         }
         return n2;
     }
-    //hola
+    String complemento2(String n1){
+        //n1=ceros(n1);
+      //  n1='0'+n1;
+        int l=n1.length();
+        String n2="";
+        int pos=buscar(n1);
+        while (l>0){
+            if (l < pos) {
+                n2=(n1.charAt(l-1)=='1')?'0'+n2:'1'+n2;
+            } else
+                n2 = n1.charAt(l - 1) + n2;
+            l--;
+        }
+        return n2;
+    }
     String convertirnegativo(String n1,String b1,String b2){
-      if (ainteger(b1)==10)
+        if (ainteger(b1)!=10)
+            n1=adecimal(n1,b1);
+        n1=abase(n1,"2");
+        if ((ainteger(b1)==10))
+            n1=complemento(n1);
+        if (b2!="2") {
+            if ((ainteger(b2)==10))
+                n1=complemento2(n1);
+            n1=adecimal(n1,"2");
+            n1 = abase(n1, b2);
+        }
+        return n1;
+    }
+    //mal
+    /*
+    String convertirnegativo(String n1,String b1,String b2){
+      if (ainteger(b1)==10){
           n1=abase(n1,"2");
           n1=complemento(n1);
-          n1=conversion(n1,"2",b2);
-    /*  }else if (ainteger(b2)==10){
+          if (ainteger(b2)!=2)
+            n1=conversion(n1,"2",b2);
+      }else if (ainteger(b2)==10){
           if (ainteger(b1)!=2)
                 n1=conversion(n1,b1,"2");
           n1=complemento(n1);
           n1=adecimal(n1,"2");
       } else
-          n1=conversion(n1,b1,b2);*/
+          n1=conversion(n1,b1,b2);
         return n1;
-    }
+    }*/
+
     //copiar caracteres desde una posicion hasta otra cadena2=cadena1.substring(0,2);
     //copiar caracteres desde una posicion hasta el final de la cadena: cadena2=cadena1.substring(posicion);
     String limpiar(String n1){
