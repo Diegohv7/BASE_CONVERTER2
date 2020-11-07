@@ -23,4 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Intent siguiente2=new Intent(this, operaciones  .class ) ;
         startActivity(siguiente2);
     }
+    //llamar a la activity presiciones
+    public void Siguiente3(View view) {
+      Intent siguiente3=new Intent( this, Precisiones.class);
+      startActivity(siguiente3);
+    }
 }

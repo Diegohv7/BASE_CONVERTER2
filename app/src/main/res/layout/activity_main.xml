@@ -21,7 +21,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="138dp"
         android:layout_marginRight="138dp"
-        android:onClick="Siguiente2"
+        android:onClick="Siguiente3"
         android:text="@string/botonpresicion" />
 
     <TextView
