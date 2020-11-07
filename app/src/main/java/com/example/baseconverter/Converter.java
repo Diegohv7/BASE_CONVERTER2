@@ -7,10 +7,14 @@ public class Converter {
     long along(String n){
         return Long.parseLong(n);
     }
+    double adouble(String n){return Double.parseDouble(n);}
     String astringlog(long n){
         return String.valueOf(n);
     }
     String astringint(int n){
+        return String.valueOf(n);
+    }
+    String astringdouble(double n){
         return String.valueOf(n);
     }
 
@@ -69,6 +73,52 @@ public class Converter {
         }
         return astringlog(nu) ;
     }
+    //CONVERTIR PARTE FRACCIONARIO (CODIGOS)
+    boolean VerifPunto(String n1){
+        boolean b = false;
+        byte i = 0;
+        while (i < n1.length() & !(b)) {
+            if (n1.charAt(i)== '.') {
+                b=true;
+            }
+            i++;
+        }
+        return b;
+    }
+    byte EncontrarPunto(String n1){
+        byte k=0;
+        boolean b = true;
+        byte i = 0;
+        while (i < n1.length() & b) {
+            if (n1.charAt(i)== '.') {
+                k = i;
+                b=false;
+            }
+            i++;
+        }
+        return k;
+    }
+    String ParteEntera(String n1) {
+        return n1.substring(0,EncontrarPunto(n1));
+    }
+    String ParteFraccionaria(String n1){
+        return n1.substring(EncontrarPunto(n1)+1);
+    }
+
+    //convertir a decimal parte fracionaria
+    String adecimalFraccionaria(String n1,String b1){
+        int k=0;
+        double nu=0;
+        while (k<n1.length()) {
+            int dig=ainteger(decodificar(n1.charAt(k))) ;
+            double val=dig*(1d/potencia(ainteger(b1),k+1));
+            nu=nu+val;
+            k++;
+        }
+        return astringdouble(nu);
+    }
+
+
     //convertir base a base
     String conversion(String n1,String b1,String b2){
         if (ainteger(b1)!=ainteger(b2)){

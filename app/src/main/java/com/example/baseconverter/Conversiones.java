@@ -52,7 +52,7 @@ public class Conversiones extends AppCompatActivity  {
                 result = nro.convertirnegativo(numero, base1, base2,bit) ;
             }
         }
-            result ='-'+result;
+        //    result ='-'+result;
         resultado .setText(result);
     }
 }
