@@ -117,16 +117,20 @@ public class Converter {
         }
         return astringdouble(nu);
     }
-
-
     //convertir base a base
     String conversion(String n1,String b1,String b2){
+        String n2="";
+        if (VerifPunto(n1)){
+            n2=adecimalFraccionaria(ParteFraccionaria(n1),b1);
+            n2=n2.substring(1);
+            n1=ParteEntera(n1);
+        }
         if (ainteger(b1)!=ainteger(b2)){
             if (ainteger(b1)!=10)
                 n1=adecimal(n1,b1);
             n1=abase(n1,b2);
         }
-        return n1;
+        return n1+n2;
     }
     int buscar(String n1){
         int l=n1.length();
