@@ -71,10 +71,11 @@ public class Converter {
     }
     //convertir base a base
     String conversion(String n1,String b1,String b2){
-        if (ainteger(b1)!=ainteger(b2))
+        if (ainteger(b1)!=ainteger(b2)){
             if (ainteger(b1)!=10)
                 n1=adecimal(n1,b1);
             n1=abase(n1,b2);
+        }
         return n1;
     }
     int buscar(String n1){
