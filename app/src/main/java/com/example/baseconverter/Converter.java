@@ -128,24 +128,6 @@ public class Converter {
             n1=conversion(n1,b1,b2);
         return n1;
     }
-    //mal
-    /*
-    String convertirnegativo(String n1,String b1,String b2){
-      if (ainteger(b1)==10){
-          n1=abase(n1,"2");
-          n1=complemento(n1);
-          if (ainteger(b2)!=2)
-            n1=conversion(n1,"2",b2);
-      }else if (ainteger(b2)==10){
-          if (ainteger(b1)!=2)
-                n1=conversion(n1,b1,"2");
-          n1=complemento(n1);
-          n1=adecimal(n1,"2");
-      } else
-          n1=conversion(n1,b1,b2);
-        return n1;
-    }*/
-
     //copiar caracteres desde una posicion hasta otra cadena2=cadena1.substring(0,2);
     //copiar caracteres desde una posicion hasta el final de la cadena: cadena2=cadena1.substring(posicion);
     String limpiar(String n1){
