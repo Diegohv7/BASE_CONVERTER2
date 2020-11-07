@@ -118,22 +118,13 @@ public class Converter {
         return n2;
     }
     String convertirnegativo(String n1,String b1,String b2,String bit){
-        n1=conversion(n1,b1,"2");
-        n1=definir_bits(n1,bit);
-        if ((ainteger(b1)==10)|(ainteger(b2)==10))
-            n1=complemento(n1);
-        n1=conversion(n1,"2",b2);
-     /*   if (ainteger(b1)!=10)
-            n1=adecimal(n1,b1);
-        n1=abase(n1,"2");
-        if ((ainteger(b1)==10))
-            n1=complemento(n1);
-        if (b2!="2") {
-            if ((ainteger(b2)==10))
-                n1=complemento2(n1);
-            n1=adecimal(n1,"2");
-            n1 = abase(n1, b2);
-        }*/
+        if ((ainteger(b1)==10)|(ainteger(b2)==10)) {
+            n1=conversion(n1,b1,"2");
+            n1 = definir_bits(n1, bit);
+            n1 = complemento(n1);
+            n1 = conversion(n1, "2", b2);
+        }else
+            n1=conversion(n1,b1,b2);
         return n1;
     }
     //mal
