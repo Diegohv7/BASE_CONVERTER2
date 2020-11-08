@@ -41,8 +41,8 @@ public class Conversiones extends AppCompatActivity  {
 
     public void convertirnegativo(View view){
         String numero=n.getText().toString()+"" ;
-        String base1=ba.getText() .toString()+"" ;
-        String base2=bs.getText() .toString() +"";
+        String base1=ba.getText().toString()+"" ;
+        String base2=bs.getText().toString() +"";
         String bit=bits.getText().toString()+"";
         String result ="ERROR";
         if ((numero!="")&(base1!="")&(base2!="")&(bit!="")) {

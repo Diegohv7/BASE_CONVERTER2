@@ -98,9 +98,7 @@ public class Converter {
         }
         return k;
     }
-    String ParteEntera(String n1) {
-        return n1.substring(0,EncontrarPunto(n1));
-    }
+    String ParteEntera(String n1) { return n1.substring(0,EncontrarPunto(n1)); }
     String ParteFraccionaria(String n1){
         return n1.substring(EncontrarPunto(n1)+1);
     }
@@ -122,7 +120,7 @@ public class Converter {
         String n2="";
         if (VerifPunto(n1)){
             n2=adecimalFraccionaria(ParteFraccionaria(n1),b1);
-            n2=n2.substring(1);
+           n2=n2.substring(1);
             n1=ParteEntera(n1);
         }
         if (ainteger(b1)!=ainteger(b2)){
@@ -131,6 +129,20 @@ public class Converter {
             n1=abase(n1,b2);
         }
         return n1+n2;
+    }
+    //Convertir decimal fraccionario a otra base
+    String abaseFraccionario(String n1, String b1) {
+        double nf=1;
+        int nt=0;
+        String n2 = ParteFraccionaria(n1);
+        n1 = abase(ParteEntera(n1), b1);
+        while (nf!=0){
+            nf = adouble(n2) * ainteger(b1);
+            String pe=ParteEntera(astringdouble(nf));
+            nt=nt*10+ainteger(pe);
+    }
+        n2=n2+ '0' + ',' + astringint(nt) ;
+        return n2;
     }
     int buscar(String n1){
         int l=n1.length();
