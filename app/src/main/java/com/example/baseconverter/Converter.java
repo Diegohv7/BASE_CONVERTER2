@@ -130,21 +130,20 @@ public class Converter {
         }
         return n2;
     }
-    //Convertir decimal fraccionario a otra base
+    //Convertir decimal fraccionario a otra base       //5.125    b=2
     String abaseFraccionario(String n1, String b1) {
         int nt = 0;
-        String n2 = ParteFraccionaria(n1);
-        double nf =adouble("0"+"."+n2);
-        n1 = abase(ParteEntera(n1), b1);
-        while (adouble(ParteFraccionaria(astringdouble(nf))) != 0) {
-            nf=adouble(n2) * ainteger(b1);
-            String pe = ParteEntera(astringdouble(nf));
-            nf = adouble(ParteFraccionaria(astringdouble(nf)));
-            nf=adouble("0"+"."+astringdouble(nf));
-            nt = nt * 10 + ainteger(pe);
+        String n2 = ParteFraccionaria(n1);     //125
+        double nf =adouble("0"+"."+n2);    //0.125
+        n1 = abase(ParteEntera(n1), b1);       // 101
+        while (adouble(ParteFraccionaria(astringdouble(nf))) != 0) {  //125 != 0
+            nf=nf * ainteger(b1);                        //0.125*2=0.25
+            String pe = ParteEntera(astringdouble(nf));   //pe=0
+            nf = adouble(ParteFraccionaria(astringdouble(nf)));   //nf=25
+            nf=adouble("0"+"."+astringdouble(nf));     //nf=0.25
+            nt = nt * 10 + ainteger(pe);      //0*10+ 0..... 001
         }
-        //n2=n2+astringdouble(nt) ;
-        return n2;
+        return n1+astringdouble(nt);   //101.001
     }
     int buscar(String n1){
         int l=n1.length();
