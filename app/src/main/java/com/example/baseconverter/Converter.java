@@ -107,44 +107,60 @@ public class Converter {
     String adecimalFraccionaria(String n1,String b1){
         int k=0;
         double nu=0;
-        while (k<n1.length()) {
-            int dig=ainteger(decodificar(n1.charAt(k))) ;
-            double val=dig*(1d/potencia(ainteger(b1),k+1));
-            nu=nu+val;
-            k++;
-        }
+        if (ainteger(b1)!=10) {
+            while (k < n1.length()) {
+                int dig = ainteger(decodificar(n1.charAt(k)));
+                double val = dig * (1d / potencia(ainteger(b1), k + 1));
+                nu = nu + val;
+                k++;
+            }
+        }else
+            nu=adouble("0."+n1);
         return astringdouble(nu);
+    }
+    //Convertir decimal fraccionario a otra base       //5.125    b=2
+    String abaseFraccionario(String n1, String b1) {
+        String nt = "";
+        double nf =adouble("0."+n1);    //0.125
+        int k=12;
+        boolean b=true;
+        if (ainteger(b1)!=10) {
+            while ((k > 0) & b) {  //8 bit de decimales
+                nf = nf * ainteger(b1);                        //0.125*2=0.25
+                String pe = ParteEntera(astringdouble(nf));   //pe=0
+                nt = nt + pe;
+                String pf = ParteFraccionaria(astringdouble(nf));   //nf=25
+                if (ainteger(pf) == 0)
+                    b = false;
+                nf = adouble("0." + pf);     //nf=0.25
+                k--;
+            }
+        }else
+            nt=n1;
+        return "0."+nt;   //001
     }
     //convertir base a base
     String conversion(String n1,String b1,String b2){
         String n2="";
+        boolean b=false;
         if (VerifPunto(n1)){
-            n2=abaseFraccionario(n1,b1);
-           n2=n2.substring(0);
-           n1=ParteEntera(n1);
+            n2=ParteFraccionaria(n1);//n2=126
+            n1=ParteEntera(n1);
+            n2 = adecimalFraccionaria(n2, b1);
+            if (ainteger(b1)!=10)
+                n2=n2.substring(2);
+            n2 = abaseFraccionario(n2, b2);
+            if (ainteger(n1)!=0)
+                n2=n2.substring(1);
         }
         if (ainteger(b1)!=ainteger(b2)){
             if (ainteger(b1)!=10)
                 n1=adecimal(n1,b1);
             n1=abase(n1,b2);
         }
-        return n2;
+        return n1+n2;
     }
-    //Convertir decimal fraccionario a otra base       //5.125    b=2
-    String abaseFraccionario(String n1, String b1) {
-        int nt = 0;
-        String n2 = ParteFraccionaria(n1);     //125
-        double nf =adouble("0"+"."+n2);    //0.125
-        n1 = abase(ParteEntera(n1), b1);       // 101
-        while (adouble(ParteFraccionaria(astringdouble(nf))) != 0) {  //125 != 0
-            nf=nf * ainteger(b1);                        //0.125*2=0.25
-            String pe = ParteEntera(astringdouble(nf));   //pe=0
-            nf = adouble(ParteFraccionaria(astringdouble(nf)));   //nf=25
-            nf=adouble("0"+"."+astringdouble(nf));     //nf=0.25
-            nt = nt * 10 + ainteger(pe);      //0*10+ 0..... 001
-        }
-        return n1+astringdouble(nt);   //101.001
-    }
+
     int buscar(String n1){
         int l=n1.length();
         int pos=0;

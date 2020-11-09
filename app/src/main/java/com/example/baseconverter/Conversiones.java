@@ -33,9 +33,10 @@ public class Conversiones extends AppCompatActivity  {
         String base1=ba.getText() .toString()+"" ;
         String base2=bs.getText() .toString() +"";
         String result ="ERROR";
-        if ((numero!="")&(base1!="")&(base2!=""))
-            if ((numero.charAt(0)!='-')&(nro.ainteger(base1)>1)&(nro.ainteger(base1)<17)&(nro.ainteger(base2)>1)&(nro.ainteger(base2)<17))
-                result=nro.conversion(numero,base1,base2);
+        if ((numero!="")&(base1!="")&(base2!="")) {
+            if ((numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17))
+                result = nro.conversion(numero, base1, base2);
+        }
         resultado .setText(result);
     }
 
