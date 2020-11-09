@@ -121,40 +121,45 @@ public class Converter {
     //Convertir decimal fraccionario a otra base       //5.125    b=2
     String abaseFraccionario(String n1, String b1) {
         String nt = "";
-        double nf =adouble("0."+n1);    //0.125
+        double nf =adouble(n1);    //0.125
         int k=12;
         boolean b=true;
-        if (ainteger(b1)!=10) {
-            while ((k > 0) & b) {  //8 bit de decimales
+        //if (ainteger(b1)!=10) {
+            while ((k > 0) || b) {  //12 bit de decimales
                 nf = nf * ainteger(b1);                        //0.125*2=0.25
                 String pe = ParteEntera(astringdouble(nf));   //pe=0
                 nt = nt + pe;
                 String pf = ParteFraccionaria(astringdouble(nf));   //nf=25
-                if (ainteger(pf) == 0)
+                if (ainteger(pf) >= 0)
                     b = false;
                 nf = adouble("0." + pf);     //nf=0.25
                 k--;
             }
-        }else
-            nt=n1;
-        return "0."+nt;   //001
+        //}//else
+          //  nt=n1;
+        return "0."+nt;   //0.001
     }
     //convertir base a base
-    String conversion(String n1,String b1,String b2){
+    String conversion(String n1,String b1,String b2){   //F.F1  b1=16   b2=10
         String n2="";
         boolean b=false;
-        if (VerifPunto(n1)){
-            n2=ParteFraccionaria(n1);//n2=126
-            n1=ParteEntera(n1);
+        if (VerifPunto(n1)) {    //true
+            n2 = ParteFraccionaria(n1);//n2=F1
+            n1 = ParteEntera(n1);     //n1=F
+            if (ainteger(b1) != 10){  //true
             n2 = adecimalFraccionaria(n2, b1);
-            if (ainteger(b1)!=10)
-                n2=n2.substring(2);
-            n2 = abaseFraccionario(n2, b2);
+            b=true;}
+            if (ainteger(b2)!=10)   //false
+                if (b){
+                 n2 = abaseFraccionario(n2, b2);
+                }else{
+                    n2 = abaseFraccionario("0."+n2, b2);
+                }
             if (ainteger(n1)!=0)
                 n2=n2.substring(1);
         }
-        if (ainteger(b1)!=ainteger(b2)){
-            if (ainteger(b1)!=10)
+        if (ainteger(b1)!=ainteger(b2)){  //true
+            if (ainteger(b1)!=10)       //true
                 n1=adecimal(n1,b1);
             n1=abase(n1,b2);
         }
