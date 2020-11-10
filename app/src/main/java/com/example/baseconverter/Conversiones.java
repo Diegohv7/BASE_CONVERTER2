@@ -24,9 +24,7 @@ public class Conversiones extends AppCompatActivity  {
         resultado=(TextView)findViewById(R.id.textView3) ;
         bits=(EditText)findViewById(R.id.editText8);
         nro=new Converter();
-        //convertir=(Button)findViewById(R.id.button2);
     }
-
     //conversion
     public void convertir(View view){
         String numero=n.getText().toString()+"";

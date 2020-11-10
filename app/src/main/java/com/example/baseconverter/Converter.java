@@ -50,6 +50,22 @@ public class Converter {
             n2="15";
         return n2;
     }
+    String codificar(String n){
+        String n2=n;
+        if ((ainteger(n)==10))
+            n2="A";
+        if (ainteger(n)==11)
+            n2="B";
+        if (ainteger(n)==12)
+            n2="C";
+        if (ainteger(n)==13)
+            n2="D";
+        if (ainteger(n)==14)
+            n2="E";
+        if (ainteger(n)==15)
+            n2="F";
+        return n2;
+    }
     long potencia(int base,int exp){
         long res=1;
         int i=1;
@@ -99,9 +115,7 @@ public class Converter {
         return k;
     }
     String ParteEntera(String n1) { return n1.substring(0,EncontrarPunto(n1)); }
-    String ParteFraccionaria(String n1){
-        return n1.substring(EncontrarPunto(n1)+1);
-    }
+    String ParteFraccionaria(String n1){ return n1.substring(EncontrarPunto(n1)+1); }
 
     //convertir a decimal parte fracionaria
     String adecimalFraccionaria(String n1,String b1){
@@ -120,24 +134,25 @@ public class Converter {
     }
     //Convertir decimal fraccionario a otra base       //5.125    b=2
     String abaseFraccionario(String n1, String b1) {
-        String nt = "";
+        n1="0."+n1;
+        String nt = "0.";
         double nf =adouble(n1);    //0.125
         int k=12;
         boolean b=true;
-        //if (ainteger(b1)!=10) {
-            while ((k > 0) || b) {  //12 bit de decimales
+        if (ainteger(b1)!=10) {
+            while ((k > 0) & b) {  //12 bit de decimales
                 nf = nf * ainteger(b1);                        //0.125*2=0.25
                 String pe = ParteEntera(astringdouble(nf));   //pe=0
-                nt = nt + pe;
+                nt = nt + codificar(pe);
                 String pf = ParteFraccionaria(astringdouble(nf));   //nf=25
-                if (ainteger(pf) >= 0)
+                if (pf == "")
                     b = false;
                 nf = adouble("0." + pf);     //nf=0.25
                 k--;
             }
-        //}//else
-          //  nt=n1;
-        return "0."+nt;   //0.001
+        }else
+            nt=n1;
+        return nt;
     }
     //convertir base a base
     String conversion(String n1,String b1,String b2){   //F.F1  b1=16   b2=10
@@ -146,23 +161,16 @@ public class Converter {
         if (VerifPunto(n1)) {    //true
             n2 = ParteFraccionaria(n1);//n2=F1
             n1 = ParteEntera(n1);     //n1=F
-            if (ainteger(b1) != 10){  //true
             n2 = adecimalFraccionaria(n2, b1);
-            b=true;}
-            if (ainteger(b2)!=10)   //false
-                if (b){
-                 n2 = abaseFraccionario(n2, b2);
-                }else{
-                    n2 = abaseFraccionario("0."+n2, b2);
-                }
-            if (ainteger(n1)!=0)
-                n2=n2.substring(1);
+            n2 = abaseFraccionario(n2.substring(2), b2);
         }
         if (ainteger(b1)!=ainteger(b2)){  //true
             if (ainteger(b1)!=10)       //true
                 n1=adecimal(n1,b1);
             n1=abase(n1,b2);
         }
+        if (!n1.equals(""))
+            n2=n2.substring(1);
         return n1+n2;
     }
 
