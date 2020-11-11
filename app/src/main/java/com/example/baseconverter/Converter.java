@@ -157,7 +157,6 @@ public class Converter {
     //convertir base a base
     String conversion(String n1,String b1,String b2){   //F.F1  b1=16   b2=10
         String n2="";
-        boolean b=false;
         if (VerifPunto(n1)) {    //true
             n2 = ParteFraccionaria(n1);//n2=F1
             n1 = ParteEntera(n1);     //n1=F
@@ -169,8 +168,8 @@ public class Converter {
                 n1=adecimal(n1,b1);
             n1=abase(n1,b2);
         }
-        if (!n1.equals(""))
-            n2=n2.substring(1);
+            if (!n1.equals("")&(VerifPunto(n2)))
+                    n2 = n2.substring(1);
         return n1+n2;
     }
 
@@ -259,7 +258,7 @@ public class Converter {
         String res=abase(astringlog(r),b);
         return res;
     }
-    String SimplePrecision(String n1, String b){
+    String SimplePrecisionMan(String n1, String b){
         int k=0;
         Double nt = adouble(n1);
         while (Math.abs(nt)>=10){
@@ -267,7 +266,18 @@ public class Converter {
            k++;
         }
         n1=astringdouble(nt);
-        n1=n1.substring(2,n1.length()-2);
+        n1=n1.substring(1,n1.length());
+        return n1;
+    }
+    String SimplePrecisionExp(String n1, String b) {
+        int k = 1;
+        Double nt = adouble(n1);
+        while (Math.abs(nt) >= 10) {
+            nt = nt / 10;
+            k++;
+        }
+        n1 = astringlog(k + (potencia(2,8-1)-1));
+        n1= conversion(n1,"10","2");
         return n1;
     }
 }

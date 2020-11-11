@@ -28,11 +28,39 @@ public class Precisiones extends AppCompatActivity {
 
 
     //botones
-    public void SimplePresicion(View view) {
+    public void SimplePresicionExponente(View view) {
         String numero = nu.getText().toString() + "";
         String base = ba.getText().toString() + "";
         String result = "ERROR";
+        String mantisa="";
+        String exponente="";
+        String signo="";
         if ((numero!="")&&(base!="")) {
+            if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))
+                if ((numero.charAt(0)) != '-') {
+                    mantisa = nro.conversion(numero, base, "2");
+                    exponente = nro.conversion(numero, base, "2");
+                    signo = "1";
+                }else {
+                    numero = nro.limpiar(numero);
+                    mantisa = nro.convertirnegativo(numero, base, "2", "8");
+                    exponente = nro.conversion(numero, base, "2");
+                    signo = "1";
+                }
+              mantisa=nro.SimplePrecisionMan(mantisa,base);
+                exponente=nro.SimplePrecisionExp(exponente,base);
+        }if (mantisa!=""){
+            man.setText(mantisa);
+            exp.setText(exponente);
+            sig.setText(signo);
+        }else
+        exp.setText(result);
+    }
+  /*  public void SimplePresicionMantisa(View view) {
+        String numero = nu.getText().toString() + "";
+        String base = ba.getText().toString() + "";
+        String result = "ERROR";
+        if ((numero != "") && (base != "")) {
             if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))
                 if ((numero.charAt(0)) != '-')
                     result = nro.conversion(numero, base, "2");
@@ -40,8 +68,22 @@ public class Precisiones extends AppCompatActivity {
                     numero = nro.limpiar(numero);
                     result = nro.convertirnegativo(numero, base, "2", "8");
                 }
-              result=nro.SimplePrecision(result,base);
+            result = nro.SimplePrecisionMan(result, base);
         }
-        exp.setText(result);
+        man.setText(result);
     }
+    public void SimplePresicionSigno(View view) {
+        String numero = nu.getText().toString() + "";
+        String base = ba.getText().toString() + "";
+        String result = "ERROR";
+        if ((numero != "") && (base != "")) {
+            if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))
+                if ((numero.charAt(0)) != '-')
+                    result = "1";
+                else
+                    result = "0";
+        }
+        sig.setText(result);
+    }*/
 }
+
