@@ -28,7 +28,7 @@ public class Precisiones extends AppCompatActivity {
 
 
     //botones
-    public void SimplePresicionExponente(View view) {
+    public void SimplePresicion(View view) {
         String numero = nu.getText().toString() + "";
         String base = ba.getText().toString() + "";
         String result = "ERROR";
@@ -36,19 +36,20 @@ public class Precisiones extends AppCompatActivity {
         String exponente="";
         String signo="";
         if ((numero!="")&&(base!="")) {
-            if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))
+            if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17)) {
                 if ((numero.charAt(0)) != '-') {
                     mantisa = nro.conversion(numero, base, "2");
                     exponente = nro.conversion(numero, base, "2");
-                    signo = "1";
-                }else {
+                    signo = "0";
+                } else {
                     numero = nro.limpiar(numero);
                     mantisa = nro.convertirnegativo(numero, base, "2", "8");
                     exponente = nro.conversion(numero, base, "2");
                     signo = "1";
                 }
-              mantisa=nro.SimplePrecisionMan(mantisa,base);
-                exponente=nro.SimplePrecisionExp(exponente,base);
+                mantisa = nro.SimplePrecisionMan(mantisa, base);
+                exponente = nro.SimplePrecisionExp(exponente, base);
+            }
         }if (mantisa!=""){
             man.setText(mantisa);
             exp.setText(exponente);

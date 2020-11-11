@@ -266,7 +266,7 @@ public class Converter {
            k++;
         }
         n1=astringdouble(nt);
-        n1=n1.substring(1,n1.length());
+        n1=n1.substring(2,n1.length());
         return n1;
     }
     String SimplePrecisionExp(String n1, String b) {
