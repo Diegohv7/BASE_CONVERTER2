@@ -259,4 +259,15 @@ public class Converter {
         String res=abase(astringlog(r),b);
         return res;
     }
+    String SimplePrecision(String n1, String b){
+        int k=0;
+        Double nt = adouble(n1);
+        while (Math.abs(nt)>=10){
+           nt=nt/10;
+           k++;
+        }
+        n1=astringdouble(nt);
+        n1=n1.substring(2,n1.length()-2);
+        return n1;
+    }
 }
