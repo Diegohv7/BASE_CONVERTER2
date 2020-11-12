@@ -245,10 +245,12 @@
         android:text="Resultados"
         android:textColor="#AEA6A6"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt10" />
+        app:layout_constraintTop_toBottomOf="@+id/edt10"
+        app:layout_constraintVertical_bias="0.046" />
 
     <EditText
         android:id="@+id/edt10"
@@ -296,7 +298,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textView18"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/button10"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
