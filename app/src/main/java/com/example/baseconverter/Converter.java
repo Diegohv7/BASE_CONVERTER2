@@ -267,6 +267,9 @@ public class Converter {
         }
         n1=astringdouble(nt);
         n1=n1.substring(2,n1.length());
+        while(n1.length() < ainteger("23")){
+            n1=n1+"0";
+        }
         return n1;
     }
     String SimplePrecisionExp(String n1, String b) {
@@ -276,7 +279,7 @@ public class Converter {
             nt = nt / 10;
             k++;
         }
-        n1 = astringlog(k + (potencia(2,8-1)-1));
+        n1 = astringlog( (potencia(2,8-1)+k)-1);
         n1= conversion(n1,"10","2");
         return n1;
     }

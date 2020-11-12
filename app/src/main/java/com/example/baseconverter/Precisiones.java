@@ -43,7 +43,7 @@ public class Precisiones extends AppCompatActivity {
                     signo = "0";
                 } else {
                     numero = nro.limpiar(numero);
-                    mantisa = nro.convertirnegativo(numero, base, "2", "8");
+                    mantisa = nro.conversion(numero, base, "2");
                     exponente = nro.conversion(numero, base, "2");
                     signo = "1";
                 }
