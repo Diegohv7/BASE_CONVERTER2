@@ -297,7 +297,7 @@ public class Converter {
     String DoblePrecisionMan(String n1, String b){
         int k=0;
         Double nt = adouble(n1);
-        while (Math.abs(nt)>=10){
+        while (Math.abs(nt)>2){
             nt=nt/10;
             k++;
         }
