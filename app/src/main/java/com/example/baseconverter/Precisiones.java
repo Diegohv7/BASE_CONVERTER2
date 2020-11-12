@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Precisiones extends AppCompatActivity {
+public class Precisiones extends AppCompatActivity implements View.OnClickListener {
     EditText nu, ba;
-    TextView sig, exp, man, res1, res2;
+    TextView sig, exp, man, res1, res2, bit1, bit2, bit3, bit4, bit5;
     Converter nro;
 
     @Override
@@ -23,9 +23,15 @@ public class Precisiones extends AppCompatActivity {
         man = (TextView) findViewById(R.id.textView20);
         res1 = (TextView) findViewById(R.id.textView23);
         res2 = (TextView) findViewById(R.id.textView24);
+        bit1 =(TextView) findViewById(R.id.textView112);
+        bit2 =(TextView) findViewById(R.id.textView14);
+        bit3 =(TextView) findViewById(R.id.textView113);
+        bit4 =(TextView) findViewById(R.id.textView12);
+        bit5 =(TextView) findViewById(R.id.textView114);
         nro=new Converter();
+        findViewById(R.id.button10) .setOnClickListener(this);
+        findViewById(R.id.button11) .setOnClickListener(this);
     }
-
 
     //botones
     public void SimplePresicion(View view) {
@@ -54,8 +60,48 @@ public class Precisiones extends AppCompatActivity {
             man.setText(mantisa);
             exp.setText(exponente);
             sig.setText(signo);
-        }else
+        }else{
+        sig.setText(result);
         exp.setText(result);
+        man.setText(result);}
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.button10:
+                if (bit2.getVisibility()==(View.GONE)) {
+                    bit2.setVisibility(View.VISIBLE);
+                    bit4.setVisibility(View.VISIBLE);
+                    bit3.setVisibility(View.GONE);
+                    bit5.setVisibility(View.GONE);
+                }else {
+                    bit2.setVisibility(View.GONE);
+                    bit4.setVisibility(View.GONE);
+                }
+                bit1.setVisibility(View.VISIBLE);
+                break;
+            case R.id.button11:
+                if (bit3.getVisibility()==(View.GONE)) {
+                    bit3.setVisibility(View.VISIBLE);
+                    bit5.setVisibility(View.VISIBLE);
+                    bit2.setVisibility(View.GONE);
+                    bit4.setVisibility(View.GONE);
+                }else {
+                    bit3.setVisibility(View.GONE);
+                    bit5.setVisibility(View.GONE);
+                }
+                bit1.setVisibility(View.VISIBLE);
+                break;
+
+
+
+
+
+
+
+        }
+
     }
   /*  public void SimplePresicionMantisa(View view) {
         String numero = nu.getText().toString() + "";

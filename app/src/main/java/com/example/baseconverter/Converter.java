@@ -273,7 +273,7 @@ public class Converter {
         return n1;
     }
     String SimplePrecisionExp(String n1, String b) {
-        int k = 1;
+        int k = 0;
         Double nt = adouble(n1);
         while (Math.abs(nt) >= 10) {
             nt = nt / 10;
