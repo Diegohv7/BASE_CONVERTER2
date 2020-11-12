@@ -70,28 +70,18 @@ public class Precisiones extends AppCompatActivity implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button10:
-                if (bit2.getVisibility()==(View.GONE)) {
                     bit2.setVisibility(View.VISIBLE);
                     bit4.setVisibility(View.VISIBLE);
                     bit3.setVisibility(View.GONE);
                     bit5.setVisibility(View.GONE);
-                }else {
-                    bit2.setVisibility(View.GONE);
-                    bit4.setVisibility(View.GONE);
-                }
-                bit1.setVisibility(View.VISIBLE);
+                    bit1.setVisibility(View.VISIBLE);
                 break;
             case R.id.button11:
-                if (bit3.getVisibility()==(View.GONE)) {
                     bit3.setVisibility(View.VISIBLE);
                     bit5.setVisibility(View.VISIBLE);
                     bit2.setVisibility(View.GONE);
                     bit4.setVisibility(View.GONE);
-                }else {
-                    bit3.setVisibility(View.GONE);
-                    bit5.setVisibility(View.GONE);
-                }
-                bit1.setVisibility(View.VISIBLE);
+                    bit1.setVisibility(View.VISIBLE);
                 break;
 
 
