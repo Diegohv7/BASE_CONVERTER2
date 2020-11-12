@@ -283,4 +283,29 @@ public class Converter {
         n1= conversion(n1,"10","2");
         return n1;
     }
+    String DoblePrecisionExp(String n1, String b) {
+        int k = 0;
+        Double nt = adouble(n1);
+        while (Math.abs(nt) >= 10) {
+            nt = nt / 10;
+            k++;
+        }
+        n1 = astringlog((potencia(2, 11 - 1) + k) - 1);
+        n1 = conversion(n1, "10", "2");
+        return n1;
+    }
+    String DoblePrecisionMan(String n1, String b){
+        int k=0;
+        Double nt = adouble(n1);
+        while (Math.abs(nt)>=10){
+            nt=nt/10;
+            k++;
+        }
+        n1=astringdouble(nt);
+        n1=n1.substring(2,n1.length());
+        while(n1.length() < ainteger("51")){
+            n1=n1+"0";
+        }
+        return n1;
+    }
 }
