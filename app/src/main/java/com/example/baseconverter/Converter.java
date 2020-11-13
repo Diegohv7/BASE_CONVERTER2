@@ -259,14 +259,8 @@ public class Converter {
         return res;
     }
     String SimplePrecisionMan(String n1, String b){
-        int k=0;
-        Double nt = adouble(n1);
-        while (Math.abs(nt)>=10){
-           nt=nt/10;
-           k++;
-        }
-        n1=astringdouble(nt);
-        n1=n1.substring(2,n1.length());
+        n1=ParteEntera(n1)+ParteFraccionaria(n1);
+        n1=n1.substring(1);
         while(n1.length() < ainteger("23")){
             n1=n1+"0";
         }
@@ -295,14 +289,8 @@ public class Converter {
         return n1;
     }
     String DoblePrecisionMan(String n1, String b){
-        int k=0;
-        Double nt = adouble(n1);
-        while (Math.abs(nt)>2){
-            nt=nt/10;
-            k++;
-        }
-        n1=astringdouble(nt);
-        n1=n1.substring(2,n1.length());
+        n1=ParteEntera(n1)+ParteFraccionaria(n1);
+        n1=n1.substring(1);
         while(n1.length() < ainteger("51")){
             n1=n1+"0";
         }

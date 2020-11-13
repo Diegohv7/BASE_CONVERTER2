@@ -72,7 +72,6 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             man.setText(result);
         }
     }
-
     public void DoblePresicion(View view) {
         String numero = nu.getText().toString() + "";
         String base = ba.getText().toString() + "";
