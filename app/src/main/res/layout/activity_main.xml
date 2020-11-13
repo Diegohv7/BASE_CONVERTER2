@@ -35,7 +35,7 @@
         android:gravity="center"
         android:saveEnabled="false"
         android:scrollHorizontally="false"
-        android:text="Conversiones y Operaciones De Cualquier Base"
+        android:text="@string/titulomenu"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="24sp"

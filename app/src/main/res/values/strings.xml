@@ -1,6 +1,28 @@
 <resources>
     <string name="app_name">BASE CONVERTER</string>
-    <string name="botonconversiones">Conversiones</string>
-    <string name="botonoperaciones">Operaciones</string>
-    <string name="botonpresicion">Smple y Doble Presición</string>
+    <string name="botonconversiones">Conversions</string>
+    <string name="botonoperaciones">Operations</string>
+    <string name="botonpresicion">Single and Double Precision</string>
+    <string name="titulomenu">Conversions and Operations on any base</string>
+    <string name="ingresarnumero">Enter a number</string>
+    <string name="baseactual">Current Base</string>
+    <string name="basedestino">Destination Base</string>
+    <string name="convertir">Convert number</string>
+    <string name="convertirnegativo">Convert negative number</string>
+    <string name="resultado">Result</string>
+    <string name="cantidadbits">Bits qty.</string>
+    <string name="bottonsimple">Single Precision (32 Bit)</string>
+    <string name="bottondoble">Double Precision (64 Bit)</string>
+    <string name="resultados">Results</string>
+    <string name="signo">Sign:</string>
+    <string name="exponente">Exponent:</string>
+    <string name="mantisa">Mantissa:</string>
+    <string name="valorhexadecimal">Hexadecimal Value:</string>
+    <string name="valordecimal">Decimal Value:</string>
+    <string name="numero1">Number 1</string>
+    <string name="numero2">Number 2</string>
+    <string name="suma">Addition</string>
+    <string name="resta">Subtraction</string>
+    <string name="multiplicacion">Multiplication</string>
+    <string name="division">Division</string>
 </resources>
