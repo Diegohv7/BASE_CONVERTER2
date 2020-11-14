@@ -85,6 +85,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         String mantisa = "";
         String exponente = "";
         String signo = "";
+        String hexadecimal="";
+        String decimal="";
         if ((numero != "") && (base != "")) {
             if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17)) {
                 if ((numero.charAt(0)) != '-') {
@@ -110,7 +112,10 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             man.setText(mantisa);
             exp.setText(exponente);
             sig.setText(signo);
-
+            hexadecimal=nro.PrecisionHexa(signo, exponente, mantisa);
+            hexa.setText(hexadecimal);
+            decimal=nro.conversion(hexadecimal,"16", "10");
+            dec.setText(decimal);
         } else {
             sig.setText(result);
             exp.setText(result);
