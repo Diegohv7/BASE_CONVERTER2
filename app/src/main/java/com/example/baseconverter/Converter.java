@@ -296,4 +296,17 @@ public class Converter {
         }
         return n1;
     }
+    String PrecisionHexa(String n1, String n2, String n3){
+        n1=n1+n2+n3;
+        n2="";
+        while (n1.length()>0) {
+            n3 = n1.substring(0, 4);
+            if (n3.equals("0000"))
+                n2 = n2 + "0";
+            else
+                n2 = n2 + conversion(n3,"2","16");
+            n1 = n1.substring(4,n1.length());
+        }
+        return n2;
+    }
 }

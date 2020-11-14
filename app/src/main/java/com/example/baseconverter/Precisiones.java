@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class Precisiones extends AppCompatActivity { //implements View.OnClickListener {
     EditText nu, ba;
-    TextView sig, exp, man, res1, res2, bit1, bit2, bit3, bit4, bit5;
+    TextView sig, exp, man, hexa, dec, bit1, bit2, bit3, bit4, bit5;
     Converter nro;
 
     @Override
@@ -21,8 +21,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         sig = (TextView) findViewById(R.id.textView18);
         exp = (TextView) findViewById(R.id.textView19);
         man = (TextView) findViewById(R.id.textView20);
-        res1 = (TextView) findViewById(R.id.textView23);
-        res2 = (TextView) findViewById(R.id.textView24);
+        hexa = (TextView) findViewById(R.id.textView23);
+        dec = (TextView) findViewById(R.id.textView24);
         bit1 = (TextView) findViewById(R.id.textView112);
         bit2 = (TextView) findViewById(R.id.textView14);
         bit3 = (TextView) findViewById(R.id.textView113);
@@ -41,6 +41,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         String mantisa = "";
         String exponente = "";
         String signo = "";
+        String hexadecimal="";
+        String decimal="";
         if ((numero != "") && (base != "")) {
             if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17)) {
                 if ((numero.charAt(0)) != '-') {
@@ -66,6 +68,10 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             man.setText(mantisa);
             exp.setText(exponente);
             sig.setText(signo);
+            hexadecimal=nro.PrecisionHexa(signo, exponente, mantisa);
+            hexa.setText(hexadecimal);
+            decimal=nro.conversion(hexadecimal,"16", "10");
+            dec.setText(decimal);
         } else {
             sig.setText(result);
             exp.setText(result);
@@ -104,6 +110,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             man.setText(mantisa);
             exp.setText(exponente);
             sig.setText(signo);
+
         } else {
             sig.setText(result);
             exp.setText(result);
