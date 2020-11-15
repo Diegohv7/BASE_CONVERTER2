@@ -60,7 +60,7 @@ public class Conversiones extends AppCompatActivity  {
             }else
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }else if (bit=="")
-            Toast.makeText(getBaseContext(), "INSERT BIT QUANTITY CORRECTLY FOR NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "ENTER THE BITS QUANTITY FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
         else if (nro.VerifPunto(numero))
             Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE FRACTIONAL NUMBER", Toast.LENGTH_LONG).show();
         else
