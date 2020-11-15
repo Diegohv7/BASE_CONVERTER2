@@ -45,6 +45,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         String signo = "";
         String hexadecimal="";
         String decimal="";
+        decimal=nro.conversion(nro.ParteEntera(numero),base,"2");
+        int k=decimal.length();
         if ((numero != "") && (base != "")) {
             if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17)) {
                 if ((numero.charAt(0)) != '-') {
@@ -57,8 +59,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                     exponente = nro.conversion(numero, base, "2");
                     signo = "1";
                 }
-                mantisa = nro.SimplePrecisionMan(mantisa, base);
-                exponente = nro.SimplePrecisionExp(exponente, base);
+                mantisa = nro.SimplePrecisionMan(mantisa);
+                exponente = nro.SimplePrecisionExp(exponente);
             }
             bit2.setVisibility(View.VISIBLE);
             bit4.setVisibility(View.VISIBLE);
@@ -70,14 +72,12 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             man.setText(mantisa);
             exp.setText(exponente);
             sig.setText(signo);
-            hexadecimal=nro.PrecisionHexa(signo, exponente, mantisa);
+            hexadecimal=nro.PrecisionSimpleHexa(signo, exponente, mantisa);
             hexa.setText(hexadecimal);
-            decimal=nro.conversion(hexadecimal,"16", "10");
+            decimal=decimal+"."+mantisa.substring(k-1);
+            decimal=nro.conversion(decimal ,"2", "10");
             dec.setText(decimal);
         } else {
-           /* sig.setText(result);
-            exp.setText(result);
-            man.setText(result);*/
             Toast.makeText(getBaseContext(),"PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
     }
@@ -89,6 +89,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         String signo = "";
         String hexadecimal="";
         String decimal="";
+        decimal=nro.conversion(nro.ParteEntera(numero),base,"2");
+        int k=decimal.length();
         if ((numero != "") && (base != "")) {
             if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17)) {
                 if ((numero.charAt(0)) != '-') {
@@ -101,8 +103,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                     exponente = nro.conversion(numero, base, "2");
                     signo = "1";
                 }
-                mantisa = nro.DoblePrecisionMan(mantisa, base);
-                exponente = nro.DoblePrecisionExp(exponente, base);
+                mantisa = nro.DoblePrecisionMan(mantisa);
+                exponente = nro.DoblePrecisionExp(exponente);
             }
             bit3.setVisibility(View.VISIBLE);
             bit5.setVisibility(View.VISIBLE);
@@ -114,36 +116,16 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             man.setText(mantisa);
             exp.setText(exponente);
             sig.setText(signo);
-            /*hexadecimal=nro.PrecisionHexa(signo, exponente, mantisa);
+            hexadecimal=nro.PrecisionDobleHexa(signo, exponente, mantisa);
             hexa.setText(hexadecimal);
-            decimal=nro.conversion(hexadecimal,"16", "10");
-            dec.setText(decimal);*/
+            decimal=decimal+"."+mantisa.substring(k-1);
+            decimal=nro.conversion(decimal ,"2", "10");
+            dec.setText(decimal);
         } else {
-            /*sig.setText(result);
-            exp.setText(result);
-            man.setText(result);*/
             Toast.makeText(getBaseContext(),"PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
     }
 }
-    /*@Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.button10:
-                    bit2.setVisibility(View.VISIBLE);
-                    bit4.setVisibility(View.VISIBLE);
-                    bit3.setVisibility(View.GONE);
-                    bit5.setVisibility(View.GONE);
-                    bit1.setVisibility(View.VISIBLE);
-                break;
-            case R.id.button11:
-                    bit3.setVisibility(View.VISIBLE);
-                    bit5.setVisibility(View.VISIBLE);
-                    bit2.setVisibility(View.GONE);
-                    bit4.setVisibility(View.GONE);
-                    bit1.setVisibility(View.VISIBLE);
-                break;
-        }
-    }*/
+
 
 

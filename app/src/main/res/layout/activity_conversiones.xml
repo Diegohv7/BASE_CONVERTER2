@@ -108,8 +108,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="331dp"
-        android:layout_height="52dp"
+        android:layout_width="334dp"
+        android:layout_height="73dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="425dp"

@@ -49,18 +49,21 @@ public class Conversiones extends AppCompatActivity  {
         String base1=ba.getText().toString()+"" ;
         String base2=bs.getText().toString() +"";
         String bit=bits.getText().toString()+"";
-        String result ="ERROR";
-        if ((numero!="")&(base1!="")&(base2!="")&(bit!="")) {
-            if ((nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)) {
+        String result ="";
+
+        if ((numero!="")&(base1!="")&(base2!="")&(bit!="")&(!nro.VerifPunto(numero))) {
+            if ((nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)&(nro.ainteger(bit)<61)) {
                 if ((numero.charAt(0)) == '-')
                     numero = nro.limpiar(numero);
                 result = nro.convertirnegativo(numero, base1, base2,bit) ;
                 resultado .setText(result);
-            }else{
+            }else
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
-            }
-        }else {
+        }else if (bit=="")
+            Toast.makeText(getBaseContext(), "INSERT BIT QUANTITY CORRECTLY FOR NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+        else if (nro.VerifPunto(numero))
+            Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE FRACTIONAL NUMBER", Toast.LENGTH_LONG).show();
+        else
             Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
-        }
     }
 }
