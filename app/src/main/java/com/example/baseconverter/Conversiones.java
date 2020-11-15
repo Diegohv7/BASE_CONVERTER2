@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Conversiones extends AppCompatActivity  {
     EditText n,ba,bs,bits;
@@ -32,10 +33,15 @@ public class Conversiones extends AppCompatActivity  {
         String base2=bs.getText() .toString() +"";
         String result ="ERROR";
         if ((numero!="")&(base1!="")&(base2!="")) {
-            if ((numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17))
+            if ((numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)) {
                 result = nro.conversion(numero, base1, base2);
+                resultado.setText(result);
+            } else {
+                Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+            }
+        }else{
+            Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
-        resultado .setText(result);
     }
 
     public void convertirnegativo(View view){
@@ -49,9 +55,12 @@ public class Conversiones extends AppCompatActivity  {
                 if ((numero.charAt(0)) == '-')
                     numero = nro.limpiar(numero);
                 result = nro.convertirnegativo(numero, base1, base2,bit) ;
+                resultado .setText(result);
+            }else{
+                Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
+        }else {
+            Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
-        //    result ='-'+result;
-        resultado .setText(result);
     }
 }

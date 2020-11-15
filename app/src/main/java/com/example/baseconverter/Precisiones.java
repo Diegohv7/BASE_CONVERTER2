@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.nio.charset.MalformedInputException;
 
 public class Precisiones extends AppCompatActivity { //implements View.OnClickListener {
     EditText nu, ba;
@@ -37,7 +40,6 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
     public void SimplePresicion(View view) {
         String numero = nu.getText().toString() + "";
         String base = ba.getText().toString() + "";
-        String result = "ERROR";
         String mantisa = "";
         String exponente = "";
         String signo = "";
@@ -73,15 +75,15 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             decimal=nro.conversion(hexadecimal,"16", "10");
             dec.setText(decimal);
         } else {
-            sig.setText(result);
+           /* sig.setText(result);
             exp.setText(result);
-            man.setText(result);
+            man.setText(result);*/
+            Toast.makeText(getBaseContext(),"PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
     }
     public void DoblePresicion(View view) {
         String numero = nu.getText().toString() + "";
         String base = ba.getText().toString() + "";
-        String result = "ERROR";
         String mantisa = "";
         String exponente = "";
         String signo = "";
@@ -112,14 +114,15 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             man.setText(mantisa);
             exp.setText(exponente);
             sig.setText(signo);
-            hexadecimal=nro.PrecisionHexa(signo, exponente, mantisa);
+            /*hexadecimal=nro.PrecisionHexa(signo, exponente, mantisa);
             hexa.setText(hexadecimal);
             decimal=nro.conversion(hexadecimal,"16", "10");
-            dec.setText(decimal);
+            dec.setText(decimal);*/
         } else {
-            sig.setText(result);
+            /*sig.setText(result);
             exp.setText(result);
-            man.setText(result);
+            man.setText(result);*/
+            Toast.makeText(getBaseContext(),"PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
     }
 }
