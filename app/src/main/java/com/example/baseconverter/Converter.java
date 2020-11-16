@@ -132,8 +132,8 @@ public class Converter {
         boolean b = false;
         int i = 0;
         while(i<=n1.length()||!b) {
-            if (n1.charAt(i) == 'A' || n1.charAt(i) == 'B' || n1.charAt(i) == 'C' || n1.charAt(i) == 'D'
-                    || n1.charAt(i) == 'E' || n1.charAt(i) == 'F') {
+            if ((n1.charAt(i) == 'A') || (n1.charAt(i) == 'B') || (n1.charAt(i) == 'C') || (n1.charAt(i) == 'D')
+                    || (n1.charAt(i) == 'E') || (n1.charAt(i) == 'F')) {
                 b = true;
             }
             i++;
