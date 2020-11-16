@@ -128,12 +128,22 @@ public class Converter {
         }
         return k;
     }
+    boolean VerifMayorNumberOnBase(String n1, String b1) {
+        boolean b = false;
+        int n2=ainteger(ParteEntera(n1)+ParteFraccionaria(n1));
+        while((n2>0)&&(!b)) {
+            if ((n2%10)>=ainteger(b1))
+            b=true;
+            n2=n2/10;
+        }
+        return b;
+    }
     boolean VerifLetter(String n1, String b1) {
         boolean b = false;
         int i = 0;
-        while(i<=n1.length()|(b==false)) {
-            if ((n1.charAt(i) == 'A') | (n1.charAt(i) == 'B') | (n1.charAt(i) == 'C') | (n1.charAt(i) == 'D')
-                    | (n1.charAt(i) == 'E') | (n1.charAt(i) == 'F')) {
+        while(i<n1.length()&&(!b)) {
+            if ((n1.charAt(i) == 'A') || (n1.charAt(i) == 'B') || (n1.charAt(i) == 'C') || (n1.charAt(i) == 'D')
+                    || (n1.charAt(i) == 'E') || (n1.charAt(i) == 'F')) {
                 if (ainteger(b1)<=10)
                 b = true;
             }

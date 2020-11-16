@@ -34,7 +34,8 @@ public class Conversiones extends AppCompatActivity {
         String base1 = ba.getText().toString() + "";
         String base2 = bs.getText().toString() + "";
         String result = "ERROR";
-     //   if (!nro.VerifLetter(numero,base1)){
+        if (!nro.VerifMayorNumberOnBase(numero, base1)) {
+            if (!nro.VerifLetter(numero, base1)) {
                 if ((numero != "") & (base1 != "") & (base2 != "")) {
                     if ((numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)) {
                         result = nro.conversion(numero, base1, base2);
@@ -43,11 +44,14 @@ public class Conversiones extends AppCompatActivity {
                         Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
                     }
                 } else {
-                    Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
                 }
-       //     }else{
-         //   Toast.makeText(getBaseContext(), "NOT PERMITTED LETTERS ON THIS BASE", Toast.LENGTH_LONG).show();
-        //}
+            } else {
+                Toast.makeText(getBaseContext(), "NOT PERMITTED LETTERS ON THIS BASE", Toast.LENGTH_LONG).show();
+            }
+        } else {
+            Toast.makeText(getBaseContext(), "THIS NUMBER IS NOT PERMITTED ON THIS BASE", Toast.LENGTH_LONG).show();
+        }
     }
 
 
