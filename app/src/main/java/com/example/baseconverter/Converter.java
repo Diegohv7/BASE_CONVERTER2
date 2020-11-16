@@ -128,12 +128,13 @@ public class Converter {
         }
         return k;
     }
-    boolean VerifLetter(String n1) {
+    boolean VerifLetter(String n1, String b1) {
         boolean b = false;
         int i = 0;
-        while(i<=n1.length()||!b) {
-            if ((n1.charAt(i) == 'A') || (n1.charAt(i) == 'B') || (n1.charAt(i) == 'C') || (n1.charAt(i) == 'D')
-                    || (n1.charAt(i) == 'E') || (n1.charAt(i) == 'F')) {
+        while(i<=n1.length()|(b==false)) {
+            if ((n1.charAt(i) == 'A') | (n1.charAt(i) == 'B') | (n1.charAt(i) == 'C') | (n1.charAt(i) == 'D')
+                    | (n1.charAt(i) == 'E') | (n1.charAt(i) == 'F')) {
+                if (ainteger(b1)<=10)
                 b = true;
             }
             i++;
