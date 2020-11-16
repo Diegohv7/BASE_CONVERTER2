@@ -50,7 +50,6 @@ public class Conversiones extends AppCompatActivity  {
         String base2=bs.getText().toString() +"";
         String bit=bits.getText().toString()+"";
         String result ="";
-
         if ((numero!="")&(base1!="")&(base2!="")&(bit!="")&(!nro.VerifPunto(numero))) {
             if ((nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)&(nro.ainteger(bit)<61)) {
                 if ((numero.charAt(0)) == '-')
@@ -60,9 +59,9 @@ public class Conversiones extends AppCompatActivity  {
             }else
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }else if (bit=="")
-            Toast.makeText(getBaseContext(), "ENTER THE BITS QUANTITY FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
         else if (nro.VerifPunto(numero))
-            Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE FRACTIONAL NUMBER", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "NOT PERMITTED TO USE NEGATIVE FRACTIONAL NUMBERS", Toast.LENGTH_LONG).show();
         else
             Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
     }

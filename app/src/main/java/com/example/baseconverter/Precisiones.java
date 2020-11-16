@@ -118,6 +118,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             sig.setText(signo);
             hexadecimal=nro.PrecisionDobleHexa(signo, exponente, mantisa);
             hexa.setText(hexadecimal);
+            //10001.1101
             decimal=decimal+"."+mantisa.substring(k-1);
             decimal=nro.conversion(decimal ,"2", "10");
             dec.setText(decimal);

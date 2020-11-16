@@ -28,7 +28,7 @@ public class Converter {
     //convertir decimal a base b
     String abase(String n1, String b1) {
         String a = "0123456789ABCDEF";
-        String resultado = "0";
+        String resultado = "";
         long n = Long.parseLong(n1);
         long b = Long.parseLong(b1);
         if (n==0)
@@ -115,7 +115,6 @@ public class Converter {
         }
         return b;
     }
-
     byte EncontrarPunto(String n1) {
         byte k = 0;
         boolean b = true;
@@ -129,7 +128,6 @@ public class Converter {
         }
         return k;
     }
-
     String ParteEntera(String n1) {
         return n1.substring(0, EncontrarPunto(n1));
     }
@@ -333,15 +331,15 @@ public class Converter {
         //String parte2= n3.substring(7);
         //n2 = conversion(parte1, "2", "16")+conversion(parte2,"2","16");
         n1=n1+n2+n3;
-        n2="";
-        while (n1.length()>0) {
+        n2=conversion(n1,"2","16");
+        /*while (n1.length()>0) {
             n3 = n1.substring(0, 4);
             if (n3.equals("0000"))
                 n2 = n2 + "0";
             else
                 n2 = n2 + conversion(n3,"2","16");
             n1 = n1.substring(4,n1.length());
-        }
+        }*/
         return n2;
     }
     String PrecisionDobleHexa(String n1, String n2, String n3) {

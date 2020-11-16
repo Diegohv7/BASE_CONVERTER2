@@ -11,8 +11,8 @@
     <string name="convertirnegativo">Convert negative number</string>
     <string name="resultado">Result</string>
     <string name="cantidadbits">Bits qty.</string>
-    <string name="bottonsimple">Single Precision (32 Bit)</string>
-    <string name="bottondoble">Double Precision (64 Bit)</string>
+    <string name="bottonsimple">Single Precision (32 Bits)</string>
+    <string name="bottondoble">Double Precision (64 Bits)</string>
     <string name="resultados">Results</string>
     <string name="signo">Sign:</string>
     <string name="exponente">Exponent:</string>
