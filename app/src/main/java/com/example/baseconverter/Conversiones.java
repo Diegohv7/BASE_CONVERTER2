@@ -10,39 +10,46 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Conversiones extends AppCompatActivity  {
-    EditText n,ba,bs,bits;
+public class Conversiones extends AppCompatActivity {
+    EditText n, ba, bs, bits;
     TextView resultado;
     Converter nro;
-  //  Button convertir;
+
+    //  Button convertir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversiones);
-        n=(EditText)findViewById(R.id.editText);
-        ba =(EditText)findViewById(R.id.editText3);
-        bs =(EditText)findViewById(R.id.editText4);
-        resultado=(TextView)findViewById(R.id.textView3) ;
-        bits=(EditText)findViewById(R.id.editText8);
-        nro=new Converter();
+        n = (EditText) findViewById(R.id.editText);
+        ba = (EditText) findViewById(R.id.editText3);
+        bs = (EditText) findViewById(R.id.editText4);
+        resultado = (TextView) findViewById(R.id.textView3);
+        bits = (EditText) findViewById(R.id.editText8);
+        nro = new Converter();
     }
+
     //conversion
-    public void convertir(View view){
-        String numero=n.getText().toString()+"";
-        String base1=ba.getText() .toString()+"" ;
-        String base2=bs.getText() .toString() +"";
-        String result ="ERROR";
-        if ((numero!="")&(base1!="")&(base2!="")) {
-            if ((numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)) {
-                result = nro.conversion(numero, base1, base2);
-                resultado.setText(result);
-            } else {
-                Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
-            }
-        }else{
-            Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+    public void convertir(View view) {
+        String numero = n.getText().toString() + "";
+        String base1 = ba.getText().toString() + "";
+        String base2 = bs.getText().toString() + "";
+        String result = "ERROR";
+        if ((!nro.VerifLetter(numero) && (nro.ainteger(base1) > 10))){
+                if ((numero != "") & (base1 != "") & (base2 != "")) {
+                    if ((numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)) {
+                        result = nro.conversion(numero, base1, base2);
+                        resultado.setText(result);
+                    } else {
+                        Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+                }
+            }else{
+            Toast.makeText(getBaseContext(), "NOT PERMITTED LETTERS ON THIS BASE", Toast.LENGTH_LONG).show();
         }
     }
+
 
     public void convertirnegativo(View view){
         String numero=n.getText().toString()+"" ;
@@ -61,7 +68,7 @@ public class Conversiones extends AppCompatActivity  {
         }else if (bit=="")
             Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
         else if (nro.VerifPunto(numero))
-            Toast.makeText(getBaseContext(), "NOT PERMITTED TO USE NEGATIVE FRACTIONAL NUMBERS", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE FRACTIONAL NUMBERS", Toast.LENGTH_LONG).show();
         else
             Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
     }
