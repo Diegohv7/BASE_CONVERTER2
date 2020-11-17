@@ -151,6 +151,22 @@ public class Converter {
         }
      return b;
     }
+    boolean VerifAllNumberOrLetter(String n1, String b1) {
+        boolean b = true;
+        int i = 0;
+        while(i<n1.length()&&(b)) {
+            if ((n1.charAt(i) == 'A') || (n1.charAt(i) == 'B') || (n1.charAt(i) == 'C') || (n1.charAt(i) == 'D')
+                    || (n1.charAt(i) == 'E') || (n1.charAt(i) == 'F') || (n1.charAt(i) == '0') ||(n1.charAt(i) == '1') || (n1.charAt(i) == '2') ||
+                    (n1.charAt(i) == '3') || (n1.charAt(i) == '4') || (n1.charAt(i) == '5') || (n1.charAt(i) == '6') || (n1.charAt(i) == '7') ||
+                    (n1.charAt(i) == '8') || (n1.charAt(i) == '9') || (n1.charAt(i) == '.') || (n1.charAt(i) == '-'))
+                        b=true;
+                    else
+                        b=false;
+            i++;
+        }
+        return b;
+    }
+
     String ParteEntera(String n1) {
         return n1.substring(0, EncontrarPunto(n1));
     }

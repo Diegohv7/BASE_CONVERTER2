@@ -34,46 +34,60 @@ public class Conversiones extends AppCompatActivity {
         String base1 = ba.getText().toString() + "";
         String base2 = bs.getText().toString() + "";
         String result = "ERROR";
-        if (!nro.VerifMayorNumberOnBase(numero, base1)) {
-            if (!nro.VerifLetter(numero, base1)) {
-                if ((numero != "") & (base1 != "") & (base2 != "")) {
-                    if ((numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)) {
+        if ((numero != "") & (base1 != "") & (base2 != "")) {
+            if ((nro.VerifAllNumberOrLetter(numero, base1)) && ((numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17))) {
+                if (!nro.VerifMayorNumberOnBase(numero, base1)) {
+                    if (!nro.VerifLetter(numero, base1)) {
                         result = nro.conversion(numero, base1, base2);
                         resultado.setText(result);
                     } else {
-                        Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), "NOT PERMITTED LETTERS ON THIS BASE", Toast.LENGTH_LONG).show();
                     }
                 } else {
-                    Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "THE NUMBER " + numero + " IS NOT PERMITTED ON BASE " + base1, Toast.LENGTH_LONG).show();
                 }
             } else {
-                Toast.makeText(getBaseContext(), "NOT PERMITTED LETTERS ON THIS BASE", Toast.LENGTH_LONG).show();
-            }
-        } else {
-            Toast.makeText(getBaseContext(), "THIS NUMBER IS NOT PERMITTED ON THIS BASE", Toast.LENGTH_LONG).show();
-        }
-    }
-
-
-    public void convertirnegativo(View view){
-        String numero=n.getText().toString()+"" ;
-        String base1=ba.getText().toString()+"" ;
-        String base2=bs.getText().toString() +"";
-        String bit=bits.getText().toString()+"";
-        String result ="";
-        if ((numero!="")&(base1!="")&(base2!="")&(bit!="")&(!nro.VerifPunto(numero))) {
-            if ((nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)&(nro.ainteger(bit)<61)) {
-                if ((numero.charAt(0)) == '-')
-                    numero = nro.limpiar(numero);
-                result = nro.convertirnegativo(numero, base1, base2,bit) ;
-                resultado .setText(result);
-            }else
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
-        }else if (bit=="")
-            Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
-        else if (nro.VerifPunto(numero))
+            }
+        }else{
+                Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
+            }
+        }
+
+
+    public void convertirnegativo(View view) {
+        String numero = n.getText().toString() + "";
+        String base1 = ba.getText().toString() + "";
+        String base2 = bs.getText().toString() + "";
+        String bit = bits.getText().toString() + "";
+        String result = "";
+        if ((numero != "") & (base1 != "") & (base2 != "") & (bit != "")) {
+        if ((!nro.VerifPunto(numero))) {
+                if (nro.VerifAllNumberOrLetter(numero, base1) && ((nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17) & (nro.ainteger(bit) < 61))) {
+                    if ((nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17) & (nro.ainteger(bit) < 61)) {
+                        if (!nro.VerifMayorNumberOnBase(numero, base1)) {
+                           if (!nro.VerifLetter(numero, base1)) {
+                        if ((numero.charAt(0)) == '-')
+                            numero = nro.limpiar(numero);
+                                result = nro.convertirnegativo(numero, base1, base2, bit);
+                                resultado.setText(result);
+                            }else{
+                                Toast.makeText(getBaseContext(), "NOT PERMITTED LETTERS ON THIS BASE", Toast.LENGTH_LONG).show();
+                            }
+                        }else{
+                            Toast.makeText(getBaseContext(), "THE NUMBER " + numero + " IS NOT PERMITTED ON BASE " + base1, Toast.LENGTH_LONG).show();
+                        }
+                    } else
+                        Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+                } else if (bit == "")
+                    Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+            } else {
             Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE FRACTIONAL NUMBERS", Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
-    }
+            }
+        }else{
+            Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
+        }
+        }
 }
