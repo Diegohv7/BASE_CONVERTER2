@@ -32,8 +32,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         bit4 = (TextView) findViewById(R.id.textView12);
         bit5 = (TextView) findViewById(R.id.textView114);
         nro = new Converter();
-       // findViewById(R.id.button10).setOnClickListener(this);
-       // findViewById(R.id.button11).setOnClickListener(this);
+        // findViewById(R.id.button10).setOnClickListener(this);
+        // findViewById(R.id.button11).setOnClickListener(this);
     }
 
     //botones
@@ -81,6 +81,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             Toast.makeText(getBaseContext(),"PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
     }
+
     public void DoblePresicion(View view) {
         String numero = nu.getText().toString() + "";
         String base = ba.getText().toString() + "";
