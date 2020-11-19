@@ -128,45 +128,33 @@ public class Converter {
         }
         return k;
     }
-    boolean VerifMayorNumberOnBase(String n1, String b1) {
-        boolean b = false;
-        int n2=ainteger(ParteEntera(n1)+ParteFraccionaria(n1));
-        while((n2>0)&&(!b)) {
-            if ((n2%10)>=ainteger(b1))
-            b=true;
-            n2=n2/10;
+    boolean VerifCaracter(String n1){
+        String s="0123456789ABCDEF.";
+        boolean b=true;
+        int c=0;
+        int i=0;
+        while (i<n1.length()&b){
+            if (s.indexOf(n1.charAt(i))==-1)
+                b=false;
+            else if (n1.charAt(i)=='.')
+                c++;
+            i++;
         }
-        return b;
+        return b & ((c==1)|(c==0));
     }
-    boolean VerifLetter(String n1, String b1) {
-        boolean b = false;
-        int i = 0;
-        while(i<n1.length()&&(!b)) {
-            if ((n1.charAt(i) == 'A') || (n1.charAt(i) == 'B') || (n1.charAt(i) == 'C') || (n1.charAt(i) == 'D')
-                    || (n1.charAt(i) == 'E') || (n1.charAt(i) == 'F')) {
-                if (ainteger(b1)<=10)
-                b = true;
+    boolean Enabled(String n1,String b1){
+        boolean b=true;
+        int i=0;
+        while (i<n1.length() & b & VerifCaracter(n1)){
+            if (n1.charAt(i)!='.') {
+                int k = ainteger(decodificar(n1.charAt(i)));
+                if (k >= ainteger(b1))
+                    b = false;
             }
             i++;
         }
-     return b;
+        return b & VerifCaracter(n1);
     }
-    boolean VerifAllNumberOrLetter(String n1, String b1) {
-        boolean b = true;
-        int i = 0;
-        while(i<n1.length()&&(b)) {
-            if ((n1.charAt(i) == 'A') || (n1.charAt(i) == 'B') || (n1.charAt(i) == 'C') || (n1.charAt(i) == 'D')
-                    || (n1.charAt(i) == 'E') || (n1.charAt(i) == 'F') || (n1.charAt(i) == '0') ||(n1.charAt(i) == '1') || (n1.charAt(i) == '2') ||
-                    (n1.charAt(i) == '3') || (n1.charAt(i) == '4') || (n1.charAt(i) == '5') || (n1.charAt(i) == '6') || (n1.charAt(i) == '7') ||
-                    (n1.charAt(i) == '8') || (n1.charAt(i) == '9') || (n1.charAt(i) == '.') || (n1.charAt(i) == '-'))
-                        b=true;
-                    else
-                        b=false;
-            i++;
-        }
-        return b;
-    }
-
     String ParteEntera(String n1) {
         return n1.substring(0, EncontrarPunto(n1));
     }
