@@ -32,53 +32,59 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         bit4 = (TextView) findViewById(R.id.textView12);
         bit5 = (TextView) findViewById(R.id.textView114);
         nro = new Converter();
-        // findViewById(R.id.button10).setOnClickListener(this);
-        // findViewById(R.id.button11).setOnClickListener(this);
     }
-
     //botones
     public void SimplePresicion(View view) {
         String numero = nu.getText().toString() + "";
         String base = ba.getText().toString() + "";
         String mantisa = "";
         String exponente = "";
-        String signo = "";
-        String hexadecimal="";
-        String decimal="";
-        decimal=nro.conversion(nro.ParteEntera(numero),base,"2");
-        int k=decimal.length();
+        String signo = "0";
+        String hexadecimal = "";
+        String decimal = "";
+        boolean b=true;
         if ((numero != "") && (base != "")) {
-            if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17)) {
-                if ((numero.charAt(0)) != '-') {
+            if((numero.charAt(0)) == '-'){
+                numero = nro.limpiar(numero);
+                signo="1";
+            }
+            if ((nro.Enabled(numero, base)) && ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))) {
+        if (nro.VerifPunto(numero))
+        decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
+        else{
+            decimal = nro.conversion(numero, base, "2");
+            b=false;
+        }
+        int k = decimal.length();
                     mantisa = nro.conversion(numero, base, "2");
                     exponente = nro.conversion(numero, base, "2");
-                    signo = "0";
-                } else {
-                    numero = nro.limpiar(numero);
-                    mantisa = nro.conversion(numero, base, "2");
-                    exponente = nro.conversion(numero, base, "2");
-                    signo = "1";
-                }
                 mantisa = nro.SimplePrecisionMan(mantisa);
                 exponente = nro.SimplePrecisionExp(exponente);
+
+                bit2.setVisibility(View.VISIBLE);
+                bit4.setVisibility(View.VISIBLE);
+                bit3.setVisibility(View.GONE);
+                bit5.setVisibility(View.GONE);
+                bit1.setVisibility(View.VISIBLE);
+
+                if (mantisa != "") {
+                    man.setText(mantisa);
+                    exp.setText(exponente);
+                    sig.setText(signo);
+                    hexadecimal = nro.PrecisionSimpleHexa(signo, exponente, mantisa);
+                    hexa.setText(hexadecimal);
+                    if (b)
+                        decimal = decimal + "." + mantisa.substring(k - 1);
+                        decimal = nro.conversion(decimal, "2", "10");
+                        dec.setText(decimal);
+                } else {
+                    Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+                }
+            } else {
+                Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
-            bit2.setVisibility(View.VISIBLE);
-            bit4.setVisibility(View.VISIBLE);
-            bit3.setVisibility(View.GONE);
-            bit5.setVisibility(View.GONE);
-            bit1.setVisibility(View.VISIBLE);
-        }
-        if (mantisa != "") {
-            man.setText(mantisa);
-            exp.setText(exponente);
-            sig.setText(signo);
-            hexadecimal=nro.PrecisionSimpleHexa(signo, exponente, mantisa);
-            hexa.setText(hexadecimal);
-            decimal=decimal+"."+mantisa.substring(k-1);
-            decimal=nro.conversion(decimal ,"2", "10");
-            dec.setText(decimal);
-        } else {
-            Toast.makeText(getBaseContext(),"PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -87,44 +93,52 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         String base = ba.getText().toString() + "";
         String mantisa = "";
         String exponente = "";
-        String signo = "";
-        String hexadecimal="";
-        String decimal="";
-        decimal=nro.conversion(nro.ParteEntera(numero),base,"2");
-        int k=decimal.length();
+        String signo = "0";
+        String hexadecimal = "";
+        String decimal = "";
+        boolean b=true;
         if ((numero != "") && (base != "")) {
-            if ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17)) {
-                if ((numero.charAt(0)) != '-') {
-                    mantisa = nro.conversion(numero, base, "2");
-                    exponente = nro.conversion(numero, base, "2");
-                    signo = "0";
-                } else {
-                    numero = nro.limpiar(numero);
-                    mantisa = nro.conversion(numero, base, "2");
-                    exponente = nro.conversion(numero, base, "2");
-                    signo = "1";
-                }
+            if(numero.charAt(0) == '-'){
+                numero = nro.limpiar(numero);
+                signo="1";
+            }
+            if ((nro.Enabled(numero, base)) && ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))) {
+            if (nro.VerifPunto(numero))
+                decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
+            else{
+                decimal = nro.conversion(numero, base, "2");
+                b=false;
+            }
+            int k = decimal.length();
+                mantisa = nro.conversion(numero, base, "2");
+                exponente = nro.conversion(numero, base, "2");
                 mantisa = nro.DoblePrecisionMan(mantisa);
                 exponente = nro.DoblePrecisionExp(exponente);
+
+                bit3.setVisibility(View.VISIBLE);
+                bit5.setVisibility(View.VISIBLE);
+                bit2.setVisibility(View.GONE);
+                bit4.setVisibility(View.GONE);
+                bit1.setVisibility(View.VISIBLE);
+
+                if (mantisa != "") {
+                    man.setText(mantisa);
+                    exp.setText(exponente);
+                    sig.setText(signo);
+                    hexadecimal = nro.PrecisionDobleHexa(signo, exponente, mantisa);
+                    hexa.setText(hexadecimal);
+                    if (b)
+                        decimal = decimal + "." + mantisa.substring(k - 1);
+                    decimal = nro.conversion(decimal, "2", "10");
+                    dec.setText(decimal);
+                } else {
+                    Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+                }
+            } else {
+                Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
-            bit3.setVisibility(View.VISIBLE);
-            bit5.setVisibility(View.VISIBLE);
-            bit2.setVisibility(View.GONE);
-            bit4.setVisibility(View.GONE);
-            bit1.setVisibility(View.VISIBLE);
-        }
-        if (mantisa != "") {
-            man.setText(mantisa);
-            exp.setText(exponente);
-            sig.setText(signo);
-            hexadecimal=nro.PrecisionDobleHexa(signo, exponente, mantisa);
-            hexa.setText(hexadecimal);
-            //10001.1101
-            decimal=decimal+"."+mantisa.substring(k-1);
-            decimal=nro.conversion(decimal ,"2", "10");
-            dec.setText(decimal);
-        } else {
-            Toast.makeText(getBaseContext(),"PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
         }
     }
 }
