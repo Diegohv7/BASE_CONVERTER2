@@ -69,7 +69,7 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="78dp"
+        android:layout_width="88dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText3"
         android:layout_alignParentStart="true"
@@ -86,14 +86,14 @@
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="158dp"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText3"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:text="@string/valorhexadecimal"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/textView23"
@@ -139,14 +139,14 @@
 
     <TextView
         android:id="@+id/textView22"
-        android:layout_width="118dp"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText3"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="@string/valordecimal"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/textView24"
@@ -176,8 +176,8 @@
         android:layout_width="250dp"
         android:layout_height="37dp"
         android:layout_marginTop="24dp"
-        android:textColor="#000000"
-        android:textStyle="bold"
+        android:textColor="#0048FF"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -186,26 +186,26 @@
     <TextView
         android:id="@+id/textView24"
         android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:textColor="#000000"
-        android:textStyle="bold"
+        android:layout_height="25dp"
+        android:layout_marginTop="32dp"
+        android:textColor="#0048FF"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <TextView
         android:id="@+id/textView23"
         android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="28dp"
-        android:textColor="#000000"
-        android:textStyle="bold"
+        android:layout_height="25dp"
+        android:layout_marginTop="40dp"
+        android:textColor="#0048FF"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <TextView
         android:id="@+id/textView18"
@@ -214,9 +214,9 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="18dp"
-        android:textColor="#000000"
+        android:textColor="#0048FF"
         android:textSize="14sp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -301,7 +301,7 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="50dp"
+        android:layout_width="88dp"
         android:layout_height="24dp"
         android:layout_below="@+id/editText3"
         android:layout_alignParentStart="true"
@@ -321,10 +321,10 @@
         android:layout_width="250dp"
         android:layout_height="37dp"
         android:layout_marginTop="24dp"
-        android:textColor="#000000"
+        android:textColor="#0048FF"
         android:textIsSelectable="false"
         android:textSize="14sp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

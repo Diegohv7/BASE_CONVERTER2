@@ -117,6 +117,7 @@
         android:shadowColor="#000000"
         android:textColor="#0048FF"
         android:textSize="18sp"
+        android:textStyle="bold|italic"
         tools:layout_editor_absoluteX="49dp"
         tools:layout_editor_absoluteY="426dp" />
 
