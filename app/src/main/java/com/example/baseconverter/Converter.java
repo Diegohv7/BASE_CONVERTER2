@@ -184,7 +184,7 @@ public class Converter {
         n1 = "0." + n1;
         String nt = "0.";
         double nf = adouble(n1);    //0.125
-        int k = 12;
+        int k = 16;
         boolean b = true;
         if (ainteger(b1) != 10) {
             while ((k > 0) & b) {  //12 bit de decimales
@@ -321,9 +321,9 @@ public class Converter {
                 if (VerifPunto(n1))
                 n1 = ParteEntera(n1) + ParteFraccionaria(n1);
                 n1 = n1.substring(1);
-                while (n1.length() < 23) {
-                    n1 = n1 + "0";
-                }
+                    while (n1.length() < 23) {
+                        n1 = n1 + "0";
+                    }
             } else {
                 while (n1.charAt(k) != '1') {
                     k++;
