@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class operaciones extends AppCompatActivity {
-    EditText n1,n2,b;
+    EditText n1,n2,b,bits;
     TextView resultado;
     Converter nro;
     @Override
@@ -20,6 +20,7 @@ public class operaciones extends AppCompatActivity {
         n1=(EditText)findViewById(R.id.editText2);
         n2 =(EditText)findViewById(R.id.editText5);
         b =(EditText)findViewById(R.id.editText6);
+        bits=(EditText)findViewById(R.id.editText7);
         nro=new Converter();
         resultado=(TextView)findViewById(R.id.textView6) ;
     }
@@ -56,64 +57,88 @@ public class operaciones extends AppCompatActivity {
         String numero1 = n1.getText().toString() + "";
         String numero2 = n2.getText().toString() + "";
         String base = b.getText().toString() + "";
-        String result;
+        String bit=bits.getText().toString()+"";
+        String result="";
         if ((numero1 != "") & (numero2 != "") & (base != "")) {
             if ((EnabledOperation(numero2,base))&(EnabledOperation(numero1,base))& (nro.ainteger(base) > 1) & (nro.ainteger(base) < 17)) {
-                result = nro.suma(numero1, numero2, base);
-                resultado.setText(result);
+                if ((numero1.charAt(0)!='-')&(numero2.charAt(0)!='-'))
+                    result = nro.suma(numero1, numero2, base,bit);
+                else if (bit!="")
+                    result = nro.suma(numero1, numero2, base,bit);
+                else
+                    Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
         }else{
             Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
+        resultado.setText(result);
     }
     public void Resta(View view) {
         String numero1 = n1.getText().toString() + "";
         String numero2 = n2.getText().toString() + "";
         String base = b.getText().toString() + "";
-        String result;
+        String bit=bits.getText().toString()+"";
+        String result="";
         if ((numero1 != "") & (numero2 != "") & (base != "")) {
             if ((EnabledOperation(numero2,base))&(EnabledOperation(numero1,base))& (nro.ainteger(base) > 1) & (nro.ainteger(base) < 17)) {
-                result = nro.resta(numero1, numero2, base);
-                resultado.setText(result);
+                if ((numero1.charAt(0)!='-')&(numero2.charAt(0)!='-'))
+                    result = nro.resta(numero1, numero2, base,bit);
+                else if (bit!="")
+                    result = nro.resta(numero1, numero2, base,bit);
+                else
+                    Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
         }else{
             Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
+        resultado.setText(result);
     }
     public void Multiplicacion(View view) {
         String numero1 = n1.getText().toString() + "";
         String numero2 = n2.getText().toString() + "";
         String base = b.getText().toString() + "";
-        String result = "ERROR";
+        String bit=bits.getText().toString()+"";
+        String result="";
         if ((numero1 != "") & (numero2 != "") & (base != "")) {
             if ((EnabledOperation(numero2,base))&(EnabledOperation(numero1,base))& (nro.ainteger(base) > 1) & (nro.ainteger(base) < 17)) {
-                result = nro.multiplicacion(numero1, numero2, base);
-                resultado.setText(result);
+                if ((numero1.charAt(0)!='-')&(numero2.charAt(0)!='-'))
+                    result = nro.multiplicacion(numero1, numero2, base,bit);
+                else if (bit!="")
+                    result = nro.multiplicacion(numero1, numero2, base,bit);
+                else
+                    Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
         }else{
             Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
+        resultado.setText(result);
     }
-    public void Division(View view){
-        String numero1=n1.getText().toString()+"" ;
-        String numero2=n2.getText() .toString()+"" ;
-        String base=b.getText() .toString() +"";
-        String result ="ERROR";
-        if ((EnabledOperation(numero2,base))&(EnabledOperation(numero1,base))& (numero1!="")&(numero2!="")&(base!="")){
-            if ((nro.ainteger(base)>1)&(nro.ainteger(base)<17)) {
-                result = nro.division(numero1, numero2, base);
-                resultado.setText(result);
-            }else {
+    public void Division(View view) {
+        String numero1 = n1.getText().toString() + "";
+        String numero2 = n2.getText().toString() + "";
+        String base = b.getText().toString() + "";
+        String bit = bits.getText().toString() + "";
+        String result = "";
+        if ((numero1 != "") & (numero2 != "") & (base != "")) {
+            if ((EnabledOperation(numero2, base)) & (EnabledOperation(numero1, base)) & (nro.ainteger(base) > 1) & (nro.ainteger(base) < 17)) {
+                if ((numero1.charAt(0) != '-') & (numero2.charAt(0) != '-'))
+                    result = nro.division(numero1, numero2, base,bit);
+                else if (bit != "")
+                    result = nro.division(numero1, numero2, base,bit);
+                else
+                    Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+            } else {
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
-        }else{
+        } else {
             Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         }
+        resultado.setText(result);
     }
 }
