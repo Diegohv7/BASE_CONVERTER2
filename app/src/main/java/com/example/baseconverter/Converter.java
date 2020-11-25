@@ -284,34 +284,86 @@ public class Converter {
 
     //dejar esto
     String suma(String n1, String n2, String b) {
-        String n11 = adecimal(n1, b);
-        String n22 = adecimal(n2, b);
-        long r = along(n11) + along(n22);
-        String res = abase(astringlog(r), b);
+        String n11;
+        String n22;
+        String res;
+        if (n1.charAt(0)!='-')
+            n11 = adecimal(n1, b);
+        else
+            n11='-'+convertirnegativo(limpiar(n1),b,"10","60");
+
+        if (n2.charAt(0)!='-')
+            n22 = adecimal(n1, b);
+        else
+            n22='-'+convertirnegativo(limpiar(n2),b,"10","60");
+        Long r = along(n11) + along(n22);
+        if (astringlog(r).charAt(0)=='-')
+            res='-'+convertirnegativo(astringlog(r),"10",b,"60");
+        else
+            res = abase(astringlog(r), b);
         return res;
     }
 
     String resta(String n1, String n2, String b) {
-        String n11 = adecimal(n1, b);
-        String n22 = adecimal(n2, b);
+        String n11;
+        String n22;
+        String res;
+        if (n1.charAt(0)!='-')
+            n11 = adecimal(n1, b);
+        else
+            n11='-'+convertirnegativo(limpiar(n1),b,"10","60");
+
+        if (n2.charAt(0)!='-')
+            n22 = adecimal(n1, b);
+        else
+            n22='-'+convertirnegativo(limpiar(n2),b,"10","60");
         Long r = along(n11) - along(n22);
-        String res = abase(astringlog(r), b);
+        if (astringlog(r).charAt(0)=='-')
+            res='-'+convertirnegativo(limpiar(astringlog(r)),"10",b,"60");
+        else
+            res = abase(astringlog(r), b);
         return res;
     }
 
     String multiplicacion(String n1, String n2, String b) {
-        String n11 = adecimal(n1, b);
-        String n22 = adecimal(n2, b);
+        String n11;
+        String n22;
+        String res;
+        if (n1.charAt(0)!='-')
+            n11 = adecimal(n1, b);
+        else
+            n11='-'+convertirnegativo(limpiar(n1),b,"10","60");
+
+        if (n2.charAt(0)!='-')
+            n22 = adecimal(n1, b);
+        else
+            n22='-'+convertirnegativo(limpiar(n2),b,"10","60");
         Long r = along(n11) * along(n22);
-        String res = abase(astringlog(r), b);
+        if (astringlog(r).charAt(0)=='-')
+            res='-'+convertirnegativo(limpiar(astringlog(r)),"10",b,"60");
+        else
+            res = abase(astringlog(r), b);
         return res;
     }
 
     String division(String n1, String n2, String b) {
-        String n11 = adecimal(n1, b);
-        String n22 = adecimal(n2, b);
+        String n11;
+        String n22;
+        String res;
+        if (n1.charAt(0)!='-')
+            n11 = adecimal(n1, b);
+        else
+            n11='-'+convertirnegativo(limpiar(n1),b,"10","60");
+
+        if (n2.charAt(0)!='-')
+            n22 = adecimal(n1, b);
+        else
+            n22='-'+convertirnegativo(limpiar(n2),b,"10","60");
         Long r = along(n11) / along(n22);
-        String res = abase(astringlog(r), b);
+        if (astringlog(r).charAt(0)=='-')
+            res='-'+convertirnegativo(limpiar(astringlog(r)),"10",b,"60");
+        else
+            res = abase(astringlog(r), b);
         return res;
     }
 
