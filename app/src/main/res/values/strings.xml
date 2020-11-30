@@ -25,4 +25,7 @@
     <string name="resta">Subtraction</string>
     <string name="multiplicacion">Multiplication</string>
     <string name="division">Division</string>
+    <string name="soporte">Support</string>
+    <string name="contactanos">Contact Us</string>
+    <string name="reporte">Report</string>
 </resources>

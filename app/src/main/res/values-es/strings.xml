@@ -26,4 +26,7 @@
     <string name="resta">Resta</string>
     <string name="multiplicacion">Multiplicación</string>
     <string name="division">División</string>
+    <string name="soporte">Soporte</string>
+    <string name="contactanos">Contáctanos</string>
+    <string name="reporte">Reportar</string>
 </resources>

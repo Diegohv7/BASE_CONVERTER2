@@ -7,6 +7,26 @@
     android:background="#434242"
     tools:context=".MainActivity">
 
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="#FFFFFF"
+        app:titleTextColor="#FFFFFF" />
+
     <Button
         android:id="@+id/button9"
         android:layout_width="wrap_content"
@@ -29,8 +49,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="47dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="71dp"
         android:fontFamily="serif"
         android:gravity="center"
         android:saveEnabled="false"
@@ -58,7 +80,8 @@
         android:layout_marginEnd="139dp"
         android:layout_marginRight="139dp"
         android:onClick="Siguiente"
-        android:text="@string/botonconversiones" />
+        android:text="@string/botonconversiones"
+        android:textColorLink="#DDDDDD" />
 
     <Button
         android:id="@+id/button"
@@ -75,7 +98,8 @@
         android:layout_marginEnd="138dp"
         android:layout_marginRight="138dp"
         android:onClick="Siguiente2"
-        android:text="@string/botonoperaciones" />
+        android:text="@string/botonoperaciones"
+        android:textColorLink="#000000" />
 
     <ImageView
         android:id="@+id/imageView3"
