@@ -30,10 +30,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.soporte) {
-            Toast.makeText(this, "Soporte", Toast.LENGTH_SHORT).show();
+                Intent soporteTB=new Intent(this, Soporte.class ) ;
+                startActivity(soporteTB);
         } else if (id == R.id.contactanos) {
             Toast.makeText(this, "Contactanos", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.reporte) {
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         }
     return true;
     }
+
     //llamar a activity conversiones
     public void Siguiente(View view){
         Intent siguiente=new Intent(this, Conversiones .class ) ;

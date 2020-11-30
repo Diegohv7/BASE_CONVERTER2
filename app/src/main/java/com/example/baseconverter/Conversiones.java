@@ -54,7 +54,7 @@ public class Conversiones extends AppCompatActivity {
                 if ((numero.charAt(0)) == '-')
                     numero = nro.limpiar(numero);
                 if ((nro.Enabled(numero,base1))&(nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17) & (nro.ainteger(bit) < 61)) {
-                    result = nro.convertirnegativo(numero, base1, base2, bit);
+                    result = '-'+nro.convertirnegativo(numero, base1, base2, bit);
                     resultado.setText(result);
                 } else
                     Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();

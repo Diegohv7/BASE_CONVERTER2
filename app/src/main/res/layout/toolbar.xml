@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#000000"
+    android:background="#ACB1B0"
     app:title="BASE CONVERTER"
-    app:titleTextColor="#FFFFFF">
+    app:titleTextColor="#050505">
 
 </androidx.appcompat.widget.Toolbar>
