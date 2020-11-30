@@ -293,7 +293,7 @@ public class Converter {
             n11='-'+convertirnegativo(limpiar(n1),b,"10",bit);
 
         if (n2.charAt(0)!='-')
-            n22 = adecimal(n1, b);
+            n22 = adecimal(n2, b);
         else
             n22='-'+convertirnegativo(limpiar(n2),b,"10",bit);
         Long r = along(n11) + along(n22);
@@ -314,14 +314,19 @@ public class Converter {
             n11='-'+convertirnegativo(limpiar(n1),b,"10",bit);
 
         if (n2.charAt(0)!='-')
-            n22 = adecimal(n1, b);
+            n22 = adecimal(n2, b);
         else
             n22='-'+convertirnegativo(limpiar(n2),b,"10",bit);
         Long r = along(n11) - along(n22);
-        if (astringlog(r).charAt(0)=='-')
-            res='-'+convertirnegativo(astringlog(r),"10",b,bit);
-        else
-            res = abase(astringlog(r), b);
+        if (ainteger(b)!=10) {
+            if (astringlog(r).charAt(0) == '-') {
+                n1 = abase(limpiar(astringlog(r)), "2");
+                bit = astringint(n1.length() + 1);
+                res = '-' + convertirnegativo(limpiar(astringlog(r)), "10", b, bit);
+            } else
+                res = abase(astringlog(r), b);
+        }else
+            res = astringlog(r);
         return res;
     }
 
@@ -335,7 +340,7 @@ public class Converter {
             n11='-'+convertirnegativo(limpiar(n1),b,"10",bit);
 
         if (n2.charAt(0)!='-')
-            n22 = adecimal(n1, b);
+            n22 = adecimal(n2, b);
         else
             n22='-'+convertirnegativo(limpiar(n2),b,"10",bit);
         Long r = along(n11) * along(n22);
@@ -356,7 +361,7 @@ public class Converter {
             n11='-'+convertirnegativo(limpiar(n1),b,"10",bit);
 
         if (n2.charAt(0)!='-')
-            n22 = adecimal(n1, b);
+            n22 = adecimal(n2, b);
         else
             n22='-'+convertirnegativo(limpiar(n2),b,"10",bit);
         Long r = along(n11) / along(n22);

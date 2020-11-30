@@ -48,30 +48,6 @@
         android:layout_marginTop="10dp"
         android:text="BASE" />
 
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/button6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Max 60"
-        android:inputType="number"
-        android:textSize="13sp"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="271dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="61dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText7"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="6dp"
-        android:text="@string/cantidadbits"
-        android:textSize="14sp" />
-
     <Button
         android:id="@+id/button4"
         style="@android:style/Widget.Holo.Button"

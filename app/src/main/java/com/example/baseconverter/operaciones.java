@@ -20,14 +20,14 @@ public class operaciones extends AppCompatActivity {
         n1=(EditText)findViewById(R.id.editText2);
         n2 =(EditText)findViewById(R.id.editText5);
         b =(EditText)findViewById(R.id.editText6);
-        bits=(EditText)findViewById(R.id.editText7);
+        //bits=(EditText)findViewById(R.id.editText7);
         nro=new Converter();
         resultado=(TextView)findViewById(R.id.textView6) ;
     }
 
     //botones
     boolean VerifCaracter(String n1){
-        String s="-0123456789ABCDEF";
+        String s="-0123456789ABCDEFabcdef";
         boolean b=true;
         int d=0;
         int i=0;
@@ -57,16 +57,14 @@ public class operaciones extends AppCompatActivity {
         String numero1 = n1.getText().toString() + "";
         String numero2 = n2.getText().toString() + "";
         String base = b.getText().toString() + "";
-        String bit=bits.getText().toString()+"";
+        String bit="";
         String result="";
         if ((numero1 != "") & (numero2 != "") & (base != "")) {
             if ((EnabledOperation(numero2,base))&(EnabledOperation(numero1,base))& (nro.ainteger(base) > 1) & (nro.ainteger(base) < 17)) {
                 if ((numero1.charAt(0)!='-')&(numero2.charAt(0)!='-'))
                     result = nro.suma(numero1, numero2, base,bit);
-                else if (bit!="")
-                    result = nro.suma(numero1, numero2, base,bit);
                 else
-                    Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE NUMBERS", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
@@ -79,16 +77,14 @@ public class operaciones extends AppCompatActivity {
         String numero1 = n1.getText().toString() + "";
         String numero2 = n2.getText().toString() + "";
         String base = b.getText().toString() + "";
-        String bit=bits.getText().toString()+"";
+        String bit="";
         String result="";
         if ((numero1 != "") & (numero2 != "") & (base != "")) {
             if ((EnabledOperation(numero2,base))&(EnabledOperation(numero1,base))& (nro.ainteger(base) > 1) & (nro.ainteger(base) < 17)) {
                 if ((numero1.charAt(0)!='-')&(numero2.charAt(0)!='-'))
                     result = nro.resta(numero1, numero2, base,bit);
-                else if (bit!="")
-                    result = nro.resta(numero1, numero2, base,bit);
                 else
-                    Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE NUMBERS", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
@@ -101,16 +97,14 @@ public class operaciones extends AppCompatActivity {
         String numero1 = n1.getText().toString() + "";
         String numero2 = n2.getText().toString() + "";
         String base = b.getText().toString() + "";
-        String bit=bits.getText().toString()+"";
+        String bit="";
         String result="";
         if ((numero1 != "") & (numero2 != "") & (base != "")) {
             if ((EnabledOperation(numero2,base))&(EnabledOperation(numero1,base))& (nro.ainteger(base) > 1) & (nro.ainteger(base) < 17)) {
                 if ((numero1.charAt(0)!='-')&(numero2.charAt(0)!='-'))
                     result = nro.multiplicacion(numero1, numero2, base,bit);
-                else if (bit!="")
-                    result = nro.multiplicacion(numero1, numero2, base,bit);
                 else
-                    Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE NUMBERS", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
@@ -123,16 +117,14 @@ public class operaciones extends AppCompatActivity {
         String numero1 = n1.getText().toString() + "";
         String numero2 = n2.getText().toString() + "";
         String base = b.getText().toString() + "";
-        String bit = bits.getText().toString() + "";
+        String bit = "";
         String result = "";
         if ((numero1 != "") & (numero2 != "") & (base != "")) {
             if ((EnabledOperation(numero2, base)) & (EnabledOperation(numero1, base)) & (nro.ainteger(base) > 1) & (nro.ainteger(base) < 17)) {
                 if ((numero1.charAt(0) != '-') & (numero2.charAt(0) != '-'))
                     result = nro.division(numero1, numero2, base,bit);
-                else if (bit != "")
-                    result = nro.division(numero1, numero2, base,bit);
                 else
-                    Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE NUMBERS", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             }
