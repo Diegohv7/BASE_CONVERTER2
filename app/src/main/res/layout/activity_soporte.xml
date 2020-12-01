@@ -9,33 +9,38 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="368dp"
-        android:layout_height="617dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="horizontal|vertical"
+        android:scrollHorizontally="true"
         android:text="@string/soportetext"
+        android:textColor="#292929"
         android:textSize="24sp"
         android:textStyle="italic"
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView10"
         style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="234dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="36dp"
         android:text="Support"
         android:textColor="#686464"
         android:textIsSelectable="true"
         android:textSize="48sp"
         android:textStyle="bold|italic"
-        android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
