@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.contactanos) {
             Toast.makeText(this, "Contactanos", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.reporte) {
-            Toast.makeText(this, "Reporte", Toast.LENGTH_SHORT).show();
+            Intent soporteTB=new Intent(Intent.ACTION_VIEW, Uri.parse("solutionapps2020@gmail.com") ) ;
+            startActivity(soporteTB);
+            Toast.makeText(this, "PLEASE SEND YOUR REPORT BY OUR EMAIL", Toast.LENGTH_LONG).show();
         }
     return true;
     }
