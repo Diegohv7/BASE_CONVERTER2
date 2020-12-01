@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Soporte"></activity>
+        <activity android:name=".Contactanos"></activity>
+        <activity android:name=".Soporte" />
         <activity android:name=".Precisiones" />
         <activity android:name=".operaciones" />
         <activity android:name=".Conversiones" />

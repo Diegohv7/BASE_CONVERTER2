@@ -5,9 +5,6 @@
         android:id="@+id/soporte"
         android:title="@string/soporte" />
     <item
-        android:id="@+id/contactanos"
-        android:title="@string/contactanos"/>
-    <item
         android:id="@+id/reporte"
-        android:title="@string/reporte"/>
+        android:title="@string/reporte" />
 </menu>

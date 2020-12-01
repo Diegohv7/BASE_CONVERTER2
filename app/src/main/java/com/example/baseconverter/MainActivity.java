@@ -32,19 +32,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
 
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.soporte) {
                 Intent soporteTB=new Intent(this, Soporte.class ) ;
                 startActivity(soporteTB);
-        } else if (id == R.id.contactanos) {
-            Toast.makeText(this, "Contactanos", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.reporte) {
-            Intent soporteTB=new Intent(Intent.ACTION_VIEW, Uri.parse("solutionapps2020@gmail.com") ) ;
-            startActivity(soporteTB);
-            Toast.makeText(this, "PLEASE SEND YOUR REPORT BY OUR EMAIL", Toast.LENGTH_LONG).show();
+            Intent report=new Intent(this,Contactanos.class) ;
+            startActivity(report);
+            //Toast.makeText(this, "PLEASE SEND YOUR REPORT BY OUR EMAIL", Toast.LENGTH_LONG).show();
         }
-    return true;
+        return true;
+    }
+    public void Report(View view){
+        Intent report=new Intent(Intent.ACTION_VIEW, Uri.parse("solutionapps2020@gmail.com")) ;
+        startActivity(report);
     }
 
     //llamar a activity conversiones
