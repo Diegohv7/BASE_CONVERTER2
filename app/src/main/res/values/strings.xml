@@ -28,4 +28,7 @@
     <string name="soporte">Support</string>
     <string name="contactanos">Contact Us</string>
     <string name="reporte">Report</string>
+    <string name="soportetext">-Conversions: Enter a positive or negative, integer or fractional number to convert it on any base from 2 to 16. Remember there are no negative fractional numbers, and when you are working with negative numbers, you have to enter a quantity of bits to get a correct answer.
+     -Operations: Enter two negative or positive numbers to do basic mathematical operations. Remember both numbers have to be on the same base. If you are working with negative numbers, put a quantity of bits to get a correct answer.
+    -Precisions: Enter a negative or positive, integer and fractional number and its base. In this option you wil be able to understand IEEE-754 FLOATING PINT numbers</string>
 </resources>

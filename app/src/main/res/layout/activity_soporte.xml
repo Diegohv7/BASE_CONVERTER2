@@ -6,15 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".Soporte">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="566dp"
-        android:layout_height="888dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="368dp"
+        android:layout_height="617dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/soportetext"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="234dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="36dp"
+        android:text="Support"
+        android:textColor="#686464"
+        android:textIsSelectable="true"
+        android:textSize="48sp"
+        android:textStyle="bold|italic"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512"
-        app:srcCompat="@drawable/englishactivitysoporte1" />
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
