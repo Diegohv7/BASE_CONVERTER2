@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,35 +11,14 @@
     tools:context=".Soporte">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="314dp"
-        android:layout_height="647dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="serif"
-        android:lineSpacingExtra="8sp"
-        android:scrollbarAlwaysDrawHorizontalTrack="false"
-        android:scrollbarAlwaysDrawVerticalTrack="false"
-        android:scrollbars="vertical"
-        android:scrollHorizontally="false"
-        android:text="@string/soportetext"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#0C0C0C"
-        android:textColorHighlight="#0288D1"
-        android:textColorLink="#1976D2"
-        android:textCursorDrawable="@android:color/holo_blue_dark"
-        android:textIsSelectable="true"
-        android:textSize="23sp"
-        android:typeface="serif"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        tools:layout_editor_absoluteX="57dp" />
-
-    <TextView
         android:id="@+id/textView10"
         style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="234dp"
         android:layout_height="70dp"
-        android:text="Support"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:text="@string/soportetitle"
         android:textColor="#686464"
         android:textColorHighlight="#0288D1"
         android:textColorLink="#1976D2"
@@ -52,4 +31,18 @@
         app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="305dp"
+        android:layout_height="467dp"
+        android:layout_below="@+id/textView10"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/soportetext"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="184dp"
+        tools:layout_editor_absoluteY="134dp"
+        tools:text="@string/soportetext" />
+</RelativeLayout>

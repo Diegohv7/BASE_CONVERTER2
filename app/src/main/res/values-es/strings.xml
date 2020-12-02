@@ -29,9 +29,9 @@
     <string name="soporte">Soporte</string>
     <string name="contactanos">Contáctanos</string>
     <string name="reporte">Reportar</string>
-    <string name="soportetext">-Conversioness: Ingresa un número positivo o negativo, entero o fracconario para convertirlo a cualquier base de 2 a 16. Recuerda que no hay números fraccionarios negativos, y cuando estés trabajando con números negativos, tienes que ingresar una cantidad de bits para llegar a la respuesta correcta.\
-        -Operaciones: Ingresa dos números positivos o negativos, para hacer operaciones matemáticas básicas. Recuerda que ambos números tienen que estar en la misma base. No está permitido colocar números negativos o fraccionarios por el momento.\
-        -Precisiones: Ingresa un número positivo o negativo, entero o fraccionario, y su base. En esta opción serás capaz de entender sobre números de PUNTO FLOTANTE IEEE-754.
+    <string name="soportetext">-CONVERSIONES: Ingresa un número positivo o negativo, entero o fracconario para convertirlo a cualquier base de 2 a 16. Recuerda que no hay números fraccionarios negativos, y cuando estés trabajando con números negativos, tienes que ingresar una cantidad de bits para llegar a la respuesta correcta.\
+        -OPERACIONES: Ingresa dos números positivos, para hacer operaciones matemáticas básicas. Recuerda que ambos números tienen que estar en la misma base. No está permitido colocar números negativos o fraccionarios por el momento.\
+        -PRESICIONES: Ingresa un número positivo o negativo, entero o fraccionario, y su base. En esta opción serás capaz de entender sobre números de PUNTO FLOTANTE IEEE-754.
      </string>
     <string name="soportetitle">Soporte</string>
 </resources>

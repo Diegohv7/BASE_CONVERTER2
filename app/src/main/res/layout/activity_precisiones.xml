@@ -79,8 +79,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="6dp"
-        android:text="Bits 0"
-        android:textSize="16sp"
+        android:text="bits: 0"
+        android:textSize="14sp"
+        android:textStyle="italic"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -95,8 +96,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="6dp"
-        android:text="Bits 8-1"
-        android:textSize="16sp"
+        android:text="bits: 8-1"
+        android:textSize="14sp"
+        android:textStyle="italic"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -111,8 +113,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="6dp"
-        android:text="Bits 11-1"
-        android:textSize="16sp"
+        android:text="bits 11-1"
+        android:textSize="14sp"
+        android:textStyle="italic"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -159,8 +162,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="6dp"
-        android:text="Bits 31-9"
-        android:textSize="16sp"
+        android:text="bits: 31-9"
+        android:textSize="14sp"
+        android:textStyle="italic"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
@@ -175,8 +179,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="6dp"
-        android:text="Bits 63-12"
-        android:textSize="16sp"
+        android:text="bits: 63-12"
+        android:textSize="14sp"
+        android:textStyle="italic"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
@@ -221,6 +226,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:textColor="#0048FF"
+        android:textSize="15sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
@@ -233,6 +239,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:textColor="#0048FF"
+        android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
@@ -245,6 +252,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:textColor="#0048FF"
+        android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
@@ -257,7 +265,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:textColor="#0048FF"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -303,7 +311,7 @@
         android:layout_marginRight="5dp"
         android:textColor="#0048FF"
         android:textIsSelectable="false"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
