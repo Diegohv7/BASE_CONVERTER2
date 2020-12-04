@@ -15,7 +15,8 @@
         android:layout_marginTop="62dp"
         android:ems="10"
         android:hint="@string/numero1"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textIsSelectable="true" />
 
     <EditText
         android:id="@+id/editText5"
@@ -26,7 +27,8 @@
         android:layout_marginTop="11dp"
         android:ems="10"
         android:hint="@string/numero2"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textIsSelectable="true" />
 
     <EditText
         android:id="@+id/editText6"
@@ -117,6 +119,7 @@
         android:layout_marginTop="80dp"
         android:hint="@string/resultado"
         android:textColor="#0048FA"
+        android:textIsSelectable="true"
         android:textSize="18sp"
         android:textStyle="bold|italic" />
 

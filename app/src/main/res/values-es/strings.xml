@@ -34,4 +34,6 @@
         -PRESICIONES: Ingresa un número positivo o negativo, entero o fraccionario, y su base. En esta opción serás capaz de entender sobre números de PUNTO FLOTANTE IEEE-754.
      </string>
     <string name="soportetitle">Soporte</string>
+    <string name="contactustext">Por favor, envía tu reporte al correo electrónico de nuestra empresa for a better experience.</string>
+    <string name="contactuslink">¡Presione el enlace!</string>
 </resources>

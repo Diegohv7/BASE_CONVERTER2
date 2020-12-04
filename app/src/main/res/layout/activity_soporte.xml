@@ -40,6 +40,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:text="@string/soportetext"
+        android:textIsSelectable="true"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="184dp"

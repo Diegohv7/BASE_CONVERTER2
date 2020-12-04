@@ -32,4 +32,6 @@
         -OPERATIONS: Enter two positive integer numbers to do basic mathematical operations. Remember both numbers have to be on the same base. Not permitted to put negative or fractional numbers at the moment.\
         -PRECISIONS: Enter a negative or positive, integer and fractional number and its base. In this option you wil be able to understand IEEE-754 FLOATING POINT numbers.</string>
     <string name="soportetitle">Support</string>
+    <string name="contactustext">Please, send your report to our company email for a better experience.</string>
+    <string name="contactuslink">Press the link!</string>
 </resources>
