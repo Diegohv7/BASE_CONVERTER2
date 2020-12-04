@@ -43,14 +43,18 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         String hexadecimal = "";
         String decimal = "";
         boolean b=true;
+        int j1 = 0;
+        String j="";
         if ((numero != "") && (base != "")) {
             if((numero.charAt(0)) == '-'){
                 numero = nro.limpiar(numero);
                 signo="1";
             }
             if ((nro.Enabled(numero, base)) && ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))) {
-        if (nro.VerifPunto(numero))
-        decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
+        if (nro.VerifPunto(numero)) {
+                    decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
+                    j=nro.SimplePrecisionMan1(nro.conversion(numero, base, "2"));
+        }
         else{
             decimal = nro.conversion(numero, base, "2");
             b=false;
@@ -74,9 +78,12 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                     hexadecimal = nro.PrecisionSimpleHexa(signo, exponente, mantisa);
                     hexa.setText(hexadecimal);
                     if (b)
+                        if (j!="")
+                            decimal = decimal + "."+ j + mantisa.substring(k - 1);
+                        else
                         decimal = decimal + "." + mantisa.substring(k - 1);
                         decimal = nro.conversion(decimal, "2", "10");
-                        dec.setText(decimal);
+                        dec.setText(decimal );
                 } else {
                     Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
                 }
@@ -97,15 +104,18 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         String hexadecimal = "";
         String decimal = "";
         boolean b=true;
+        int j1 = 0;
+        String j="";
         if ((numero != "") && (base != "")) {
             if(numero.charAt(0) == '-'){
                 numero = nro.limpiar(numero);
                 signo="1";
             }
             if ((nro.Enabled(numero, base)) && ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))) {
-            if (nro.VerifPunto(numero))
+            if (nro.VerifPunto(numero)) {
                 decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
-            else{
+
+            }else{
                 decimal = nro.conversion(numero, base, "2");
                 b=false;
             }
@@ -128,7 +138,10 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                     hexadecimal = nro.PrecisionDobleHexa(signo, exponente, mantisa);
                     hexa.setText(hexadecimal);
                     if (b)
-                        decimal = decimal + "." + mantisa.substring(k - 1);
+                        if (j!="")
+                            decimal = decimal + "."+ j + mantisa.substring(k - 1);
+                        else
+                            decimal = decimal + "." + mantisa.substring(k - 1);
                     decimal = nro.conversion(decimal, "2", "10");
                     dec.setText(decimal);
                 } else {

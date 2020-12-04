@@ -393,6 +393,16 @@ public class Converter {
 
         return n1;
     }
+    String SimplePrecisionMan1(String n1) {
+        int k = 2;
+        String j="";
+       while(n1.charAt(k)=='0'){
+           j=j+"0";
+            k++;}
+       if (j!="")
+           j=j+"1";
+        return j;
+    }
     //10001.010
     String SimplePrecisionExp(String n1) {
         int k = 0;
