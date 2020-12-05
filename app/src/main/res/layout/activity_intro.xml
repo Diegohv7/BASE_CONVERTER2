@@ -16,11 +16,11 @@
         android:src="@drawable/solutionlogo2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647" />
+        app:layout_constraintVertical_bias="0.637" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -51,12 +51,15 @@
         android:id="@+id/imageView8"
         android:layout_width="408dp"
         android:layout_height="50dp"
+        android:adjustViewBounds="false"
+        android:scaleType="centerInside"
         android:src="@drawable/nameslogo3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.989"
+        app:srcCompat="@drawable/a1developers" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

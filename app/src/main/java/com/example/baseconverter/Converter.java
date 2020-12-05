@@ -178,20 +178,56 @@ public class Converter {
             nu = adouble("0." + n1);
         return astringdouble(nu);
     }
-
+    boolean verifNeg(String n1){
+        boolean b=false;
+        int i=0;
+        while (i<n1.length()&!b){
+            if (n1.charAt(i)=='-')
+                b=true;
+            i++;
+        }
+        return b;
+    }
+    int posicionSig(String n1){
+        int c=0;
+        for (int i=0;(i<n1.length());i++){
+            if (n1.charAt(i)=='-')
+                    c=i;
+        }
+        return c;
+    }
+    String DeletePunto(String n1){
+        String n2="";
+        for (int i=0;(i<n1.length());i++){
+            if (n1.charAt(i)!='.')
+                n2=n2+n1.charAt(i);
+        }
+        return n2;
+    }
+    String FraccionariaNC(String n1){
+        //ej= n1=1.23E-7;=0.000000123
+        int n=ainteger(n1.substring(posicionSig(n1)+1))-1;
+        String n2="";
+        n1=n1.substring(0,posicionSig(n1)-1);//eliminando E-7 seria n1= 1.23
+        for (int i=0;(i<n);i++){ //rellenando de 0s
+            n2=n2+'0';
+        }
+        n2=n2+DeletePunto(n1);//eliminando (.)  n2+ n1= 123
+        return n2;
+    }
     //Convertir decimal fraccionario a otra base       //5.125    b=2
     String abaseFraccionario(String n1, String b1) {
         n1 = "0." + n1;
         String nt = "0.";
         double nf = adouble(n1);    //0.125
-        int k = 16;
+        int k = 32;
         boolean b = true;
         if (ainteger(b1) != 10) {
             while ((k > 0) & b) {  //12 bit de decimales
-                nf = nf * ainteger(b1);                        //0.125*2=0.25
-                String pe = ParteEntera(astringdouble(nf));   //pe=0
+                nf = nf * ainteger(b1);//0.125*2=0.25
+                String pe = (verifNeg(astringdouble(nf)))?"0":ParteEntera(astringdouble(nf));   //pe=0
                 nt = nt + codificar(pe);
-                String pf = ParteFraccionaria(astringdouble(nf));   //nf=25
+                String pf = (verifNeg(astringdouble(nf)))?FraccionariaNC(astringdouble(nf)):ParteFraccionaria(astringdouble(nf));   //nf=25
                 if (pf == "")
                     b = false;
                 nf = adouble("0." + pf);     //nf=0.25

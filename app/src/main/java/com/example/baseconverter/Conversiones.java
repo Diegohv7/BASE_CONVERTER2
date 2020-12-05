@@ -42,6 +42,8 @@ public class Conversiones extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         } else
             Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
+
+
     }
     public void convertirnegativo(View view) {
         String numero = n.getText().toString() + "";
