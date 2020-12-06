@@ -62,9 +62,9 @@ public class Conversiones extends AppCompatActivity {
                     Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
             } else
                 Toast.makeText(getBaseContext(), "NOT PERMITTED NEGATIVE FRACTIONAL NUMBERS", Toast.LENGTH_LONG).show();
-        } else if (bit == "")
-            Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
+        } else if (bit != "")
+            Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
         else
-            Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "ENTER THE QUANTITY OF BITS FOR THE NEGATIVE NUMBER", Toast.LENGTH_LONG).show();
     }
 }

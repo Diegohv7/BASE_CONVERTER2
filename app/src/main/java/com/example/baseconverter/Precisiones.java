@@ -65,6 +65,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                 mantisa = nro.SimplePrecisionMan(mantisa);
                 exponente = nro.SimplePrecisionExp(exponente);
 
+
                 bit2.setVisibility(View.VISIBLE);
                 bit4.setVisibility(View.VISIBLE);
                 bit3.setVisibility(View.GONE);
@@ -72,7 +73,9 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                 bit1.setVisibility(View.VISIBLE);
 
                 if (mantisa != "") {
+                    mantisa=mantisa.substring(0,23);
                     man.setText(mantisa);
+                    exponente=exponente.substring(0,8) ;
                     exp.setText(exponente);
                     sig.setText(signo);
                     hexadecimal = nro.PrecisionSimpleHexa(signo, exponente, mantisa);
@@ -83,6 +86,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                         else
                         decimal = decimal + "." + mantisa.substring(k - 1);
                         decimal = nro.conversion(decimal, "2", "10");
+                    if (signo=="1")
+                        decimal="-"+decimal;
                         dec.setText(decimal );
                 } else {
                     Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
@@ -114,7 +119,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             if ((nro.Enabled(numero, base)) && ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))) {
             if (nro.VerifPunto(numero)) {
                 decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
-
+                j=nro.SimplePrecisionMan1(nro.conversion(numero, base, "2"));
             }else{
                 decimal = nro.conversion(numero, base, "2");
                 b=false;
@@ -132,10 +137,12 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                 bit1.setVisibility(View.VISIBLE);
 
                 if (mantisa != "") {
+                    mantisa=mantisa.substring(0,52);
                     man.setText(mantisa);
+                    exponente=exponente.substring(0,11);
                     exp.setText(exponente);
                     sig.setText(signo);
-                    hexadecimal = nro.PrecisionDobleHexa(signo, exponente, mantisa);
+                    hexadecimal = nro.PrecisionSimpleHexa(signo, exponente, mantisa);
                     hexa.setText(hexadecimal);
                     if (b)
                         if (j!="")
@@ -143,6 +150,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                         else
                             decimal = decimal + "." + mantisa.substring(k - 1);
                     decimal = nro.conversion(decimal, "2", "10");
+                    if (signo=="1")
+                        decimal="-"+decimal;
                     dec.setText(decimal);
                 } else {
                     Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();

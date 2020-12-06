@@ -422,9 +422,9 @@ public class Converter {
                     k++;
                 }
                 n1 = n1.substring(k + 1);
-                while (n1.length() < 23) {
-                    n1 = n1 + "0";
-                }
+                    while (n1.length() < 23) {
+                        n1 = n1 + "0";
+                    }
             }
 
         return n1;
@@ -461,9 +461,9 @@ public class Converter {
         }
         n1 = astringlog((potencia(2, 8 - 1) + k) - 1);
         n1 = conversion(n1, "10", "2");
-        while (n1.length()<8){
-            n1="0"+n1;
-        }
+            while (n1.length() < 8) {
+                n1 = "0" + n1;
+            }
         return n1;
     }
 
@@ -516,17 +516,22 @@ public class Converter {
         return n1;
     }
     String PrecisionSimpleHexa(String n1, String n2, String n3) {
-        n1=n1+n2+n3;
-        n2=conversion(n1,"2","16");
+       if (n1!="0")
+        n2=conversion(n1+n2+n3,"2","16");
+        else
+            n2=conversion(n2+n3,"2","16");
         return n2;
     }
     String PrecisionDobleHexa(String n1, String n2, String n3) {
-        String parte1 = n1 + n2 + n3.substring(0, 20);
-        String parte2 = n3.substring(21);
-        n2 = conversion(parte1, "2", "16") + conversion(parte2, "2", "16");
-        while (n2.length()<16){
+       // String parte1 = n1 + n2 + n3.substring(0, 20);
+        //String parte2 = n3.substring(21);
+        if (n1!="0")
+            n2=conversion(n1+n2+n3,"2","16");
+        else
+            n2=conversion(n2+n3,"2","16");
+       /* while (n2.length()<16){
             n2=n2+"0";
-        }
+        }*/
         /*while (n1.length()>0) {
             n3 = n1.substring(0, 4);
             if (n3.equals("0000"))

@@ -34,6 +34,7 @@
         android:ems="10"
         android:hint="2-16"
         android:inputType="number"
+        android:textIsSelectable="true"
         tools:layout_editor_absoluteX="121dp"
         tools:layout_editor_absoluteY="270dp" />
 
@@ -62,6 +63,7 @@
         android:ems="10"
         android:hint="2-16"
         android:inputType="number"
+        android:textIsSelectable="true"
         tools:layout_editor_absoluteX="213dp"
         tools:layout_editor_absoluteY="271dp" />
 
