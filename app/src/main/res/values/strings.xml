@@ -2,7 +2,7 @@
     <string name="app_name">BASE CONVERTER</string>
     <string name="botonconversiones">Conversions</string>
     <string name="botonoperaciones">Operations</string>
-    <string name="botonpresicion">Single and Double Precision</string>
+    <string name="botonpresicion">Floating-Point</string>
     <string name="titulomenu">Conversions and Operations on any base</string>
     <string name="ingresarnumero">Enter a number</string>
     <string name="baseactual">Current Base</string>
@@ -30,7 +30,7 @@
     <string name="reporte">Report</string>
     <string name="soportetext">-CONVERSIONS: Enter a positive or negative, integer or fractional number to convert it on any base from 2 to 16. Remember there are no negative fractional numbers, and when you are working with negative numbers, you have to enter a quantity of bits to get a correct answer.\
         -OPERATIONS: Enter two positive integer numbers to do basic mathematical operations. Remember both numbers have to be on the same base. Not permitted to put negative or fractional numbers at the moment.\
-        -PRECISIONS: Enter a negative or positive, integer and fractional number and its base. In this option you wil be able to understand IEEE-754 FLOATING POINT numbers.</string>
+        -PRECISIONS: Enter a negative or positive, integer or fractional number and its base. In this option you wil be able to understand IEEE-754 FLOATING POINT numbers.</string>
     <string name="soportetitle">Support</string>
     <string name="contactustext">We are working every day to give you a better experience, send us your message.</string>
     <string name="contactuslink">Press the link!</string>

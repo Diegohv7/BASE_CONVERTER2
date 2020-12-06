@@ -8,8 +8,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.nio.charset.MalformedInputException;
-
 public class Precisiones extends AppCompatActivity { //implements View.OnClickListener {
     EditText nu, ba;
     TextView sig, exp, man, hexa, dec, bit1, bit2, bit3, bit4, bit5;
@@ -24,8 +22,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         sig = (TextView) findViewById(R.id.textView18);
         exp = (TextView) findViewById(R.id.textView19);
         man = (TextView) findViewById(R.id.textView20);
-        hexa = (TextView) findViewById(R.id.textView23);
-        dec = (TextView) findViewById(R.id.textView24);
+        hexa = (TextView) findViewById(R.id.textView24);
+        dec = (TextView) findViewById(R.id.textView23);
         bit1 = (TextView) findViewById(R.id.textView112);
         bit2 = (TextView) findViewById(R.id.textView14);
         bit3 = (TextView) findViewById(R.id.textView113);
@@ -142,7 +140,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                     exponente=exponente.substring(0,11);
                     exp.setText(exponente);
                     sig.setText(signo);
-                    hexadecimal = nro.PrecisionSimpleHexa(signo, exponente, mantisa);
+                    hexadecimal = nro.PrecisionDobleHexa(signo, exponente, mantisa);
                     hexa.setText(hexadecimal);
                     if (b)
                         if (j!="")

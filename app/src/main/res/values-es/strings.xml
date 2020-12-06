@@ -3,7 +3,7 @@
     <string name="app_name">BASE CONVERTER</string>
     <string name="botonconversiones">Conversiones</string>
     <string name="botonoperaciones">Operaciones</string>
-    <string name="botonpresicion">Simple y Doble Precisión</string>
+    <string name="botonpresicion">Punto Flotante</string>
     <string name="titulomenu">Conversiones y Operaciones en cualquier base</string>
     <string name="ingresarnumero">Ingrese un número</string>
     <string name="baseactual">Base Actual</string>

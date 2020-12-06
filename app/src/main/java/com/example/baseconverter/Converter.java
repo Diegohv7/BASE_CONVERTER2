@@ -523,23 +523,14 @@ public class Converter {
         return n2;
     }
     String PrecisionDobleHexa(String n1, String n2, String n3) {
-       // String parte1 = n1 + n2 + n3.substring(0, 20);
-        //String parte2 = n3.substring(21);
         if (n1!="0")
-            n2=conversion(n1+n2+n3,"2","16");
+            n2=n1+n2+n3;
         else
-            n2=conversion(n2+n3,"2","16");
-       /* while (n2.length()<16){
-            n2=n2+"0";
-        }*/
-        /*while (n1.length()>0) {
-            n3 = n1.substring(0, 4);
-            if (n3.equals("0000"))
-                n2 = n2 + "0";
-            else
-                n2 = n2 + conversion(n3,"2","16");
-            n1 = n1.substring(4,n1.length());
-        }*/
+            n2=n2+n3;
+       if (n2.length()==64 )
+           n2=conversion(n2.substring(0,32),"2", "16") +conversion(n2.substring(32,64),"2","16");
+        else
+         n2=conversion(n2.substring(0,31),"2","16"  )+conversion(n2.substring(31,63),"2","16"  );
         return n2;
     }
 }
