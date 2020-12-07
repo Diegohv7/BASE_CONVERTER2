@@ -114,6 +114,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         boolean b=true;
         int j1 = 0;
         String j="";
+        String mantisa1="";
         if ((numero != "") && (base != "")) {
             if(numero.charAt(0) == '-'){
                 numero = nro.limpiar(numero);
@@ -122,6 +123,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             if ((nro.Enabled(numero, base)) && ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))) {
             if (nro.VerifPunto(numero)) {
                 decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
+                if (nro.adouble(nro.conversion(numero, base, "2")) < 1)
                 j=nro.SimplePrecisionMan1(nro.conversion(numero, base, "2"));
             }else{
                 decimal = nro.conversion(numero, base, "2");
@@ -129,9 +131,15 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             }
             int k = decimal.length();
                 mantisa = nro.conversion(numero, base, "2");
+                mantisa1 = nro.conversion(numero, base, "2");
                 exponente = nro.conversion(numero, base, "2");
                 mantisa = nro.DoblePrecisionMan(mantisa);
+                mantisa1 = nro.DoblePrecisionMan(mantisa);
                 exponente = nro.DoblePrecisionExp(exponente);
+                if (mantisa.length() >52)
+                    mantisa=mantisa.substring(1,53);
+                if (exponente.length() >11)
+                    exponente=exponente.substring(0,11) ;
 
                 bit3.setVisibility(View.VISIBLE);
                 bit5.setVisibility(View.VISIBLE);
@@ -140,18 +148,16 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                 bit1.setVisibility(View.VISIBLE);
 
                 if (mantisa != "") {
-                    mantisa=mantisa.substring(0,52);
                     man.setText(mantisa);
-                    exponente=exponente.substring(0,11);
                     exp.setText(exponente);
                     sig.setText(signo);
                     hexadecimal = nro.PrecisionDobleHexa(signo, exponente, mantisa);
                     hexa.setText(hexadecimal);
                     if (b)
                         if (j!="")
-                            decimal = decimal + "."+ j + mantisa.substring(k - 1);
+                            decimal = decimal + "."+ j + mantisa1.substring(k - 1);
                         else
-                            decimal = decimal + "." + mantisa.substring(k - 1);
+                            decimal = decimal + "." + mantisa1.substring(k - 1);
                     decimal = nro.conversion(decimal, "2", "10");
                     if (signo=="1")
                         decimal="-"+decimal;
