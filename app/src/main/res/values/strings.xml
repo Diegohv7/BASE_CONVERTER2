@@ -3,7 +3,7 @@
     <string name="botonconversiones">Conversions</string>
     <string name="botonoperaciones">Operations</string>
     <string name="botonpresicion">Floating-Point</string>
-    <string name="titulomenu">Conversions and Operations on any base</string>
+    <string name="titulomenu">Conversions and Operations on any bases</string>
     <string name="ingresarnumero">Enter a number</string>
     <string name="baseactual">Current Base</string>
     <string name="basedestino">Destination Base</string>
