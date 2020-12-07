@@ -409,24 +409,22 @@ public class Converter {
     }
 
     String SimplePrecisionMan(String n1) {
-        int k=0;
-            if (adouble(n1) > 1) {
-                if (VerifPunto(n1))
+        int k = 0;
+        if (adouble(n1) > 1) {
+            if (VerifPunto(n1))
                 n1 = ParteEntera(n1) + ParteFraccionaria(n1);
-                n1 = n1.substring(1);
-                    while (n1.length() < 23) {
-                        n1 = n1 + "0";
-                    }
-            } else {
-                while (n1.charAt(k) != '1') {
-                    k++;
-                }
-                n1 = n1.substring(k + 1);
-                    while (n1.length() < 23) {
-                        n1 = n1 + "0";
-                    }
+            while (n1.length() < 23) {
+                n1 = n1 + "0";
             }
-
+        } else {
+            while (n1.charAt(k) != '1') {
+                k++;
+            }
+            n1 = n1.substring(k + 1);
+            while (n1.length() < 23) {
+                n1 = n1 + "0";
+            }
+        }
         return n1;
     }
     String SimplePrecisionMan1(String n1) {

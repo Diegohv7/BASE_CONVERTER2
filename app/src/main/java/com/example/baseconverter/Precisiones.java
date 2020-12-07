@@ -36,12 +36,12 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
         String numero = nu.getText().toString() + "";
         String base = ba.getText().toString() + "";
         String mantisa = "";
+        String mantisa1 = "";
         String exponente = "";
         String signo = "0";
         String hexadecimal = "";
         String decimal = "";
         boolean b=true;
-        int j1 = 0;
         String j="";
         if ((numero != "") && (base != "")) {
             if((numero.charAt(0)) == '-'){
@@ -50,18 +50,25 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             }
             if ((nro.Enabled(numero, base)) && ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))) {
         if (nro.VerifPunto(numero)) {
-                    decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
-                    j=nro.SimplePrecisionMan1(nro.conversion(numero, base, "2"));
-        }
-        else{
+            decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
+            if (nro.adouble(nro.conversion(numero, base, "2")) < 1)
+                j = nro.SimplePrecisionMan1(nro.conversion(numero, base, "2"));
+
+        }else{
             decimal = nro.conversion(numero, base, "2");
             b=false;
         }
         int k = decimal.length();
                     mantisa = nro.conversion(numero, base, "2");
+                mantisa1 = nro.conversion(numero, base, "2");
                     exponente = nro.conversion(numero, base, "2");
                 mantisa = nro.SimplePrecisionMan(mantisa);
+                mantisa1 = nro.SimplePrecisionMan(mantisa);
                 exponente = nro.SimplePrecisionExp(exponente);
+                if (mantisa.length() >23)
+                    mantisa=mantisa.substring(1,24);
+                if (exponente.length() >8)
+                    exponente=exponente.substring(0,8) ;
 
 
                 bit2.setVisibility(View.VISIBLE);
@@ -71,22 +78,20 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                 bit1.setVisibility(View.VISIBLE);
 
                 if (mantisa != "") {
-                    mantisa=mantisa.substring(0,23);
                     man.setText(mantisa);
-                    exponente=exponente.substring(0,8) ;
                     exp.setText(exponente);
                     sig.setText(signo);
                     hexadecimal = nro.PrecisionSimpleHexa(signo, exponente, mantisa);
                     hexa.setText(hexadecimal);
                     if (b)
                         if (j!="")
-                            decimal = decimal + "."+ j + mantisa.substring(k - 1);
+                            decimal = decimal + "."+ j + mantisa1.substring(k - 1);
                         else
-                        decimal = decimal + "." + mantisa.substring(k - 1);
+                        decimal = decimal + "." + mantisa1.substring(k - 1);
                         decimal = nro.conversion(decimal, "2", "10");
                     if (signo=="1")
                         decimal="-"+decimal;
-                        dec.setText(decimal );
+                        dec.setText(decimal);
                 } else {
                     Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
                 }
