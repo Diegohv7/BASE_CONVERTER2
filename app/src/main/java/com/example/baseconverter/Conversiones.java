@@ -37,9 +37,9 @@ public class Conversiones extends AppCompatActivity {
         long  num = 922337203;
         String  num1 = "0";
         //result=nro.astringint( nro.posicionOne(nro.ParteFraccionaria(numero))) ;
-        result=nro.SimplePrecisionMan(numero) ;
-        resultado.setText(result);
-    /*    if ((numero != "") & (base1 != "") & (base2 != "")) {
+       // result=nro.SimplePrecisionMan(numero) ;
+        //resultado.setText(result);
+        if ((numero != "") & (base1 != "") & (base2 != "")) {
             if ((nro.Enabled(numero, base1)) & (numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)) {
                 result = nro.conversion(numero, base1, base2);
                 resultado.setText(result);
@@ -51,7 +51,6 @@ public class Conversiones extends AppCompatActivity {
       //  if (nro.along(num)>nro.along(num1)){
         //Toast.makeText(getBaseContext(), "NO SE PUEDE", Toast.LENGTH_LONG).show();
 
-     */
     }
     public void convertirnegativo(View view) {
         String numero = n.getText().toString() + "";

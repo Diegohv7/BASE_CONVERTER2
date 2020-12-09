@@ -432,16 +432,16 @@ public class Converter {
         return res;
     }
 
-    String SimplePrecisionMan(String n1) {
-        int k = 0;
-        String n2 = ParteFraccionaria(n1);
-        String n3 = ParteEntera(n1);
-        k = (posicionOne(n2) == 0) ? posicionOne(n2) : posicionOne(n2) + 1;
-        String nr = n3 + n2;
+    String SimplePrecisionMan(String n1) {   //n1 = 11.0
+        int k = 0;                              //k=0
+        String n2 = ParteFraccionaria(n1);   //0
+        String n3 = ParteEntera(n1);        //11
+        k = (posicionOne(n2) == 0) ? posicionOne(n2) : posicionOne(n2) + 1;   //k=1
+        String nr=n3+n2;                                          //nr=110
         if (VerifPunto(n1) & k == 0)
-            k++;
-        if (n2.length()>1 )
-        nr=(!n3.equals("0"))?nr.substring(posicionOne(nr)+1):nr.substring(k+1);
+            k++;                                          //k = 1
+        if (nr.length()>=1 )
+        nr=(!n3.equals("0"))?nr.substring(posicionOne(nr)):nr.substring(k);   //nr = 110
         else
             nr="";
         while (nr.length() < 23) {
@@ -492,7 +492,7 @@ public class Converter {
     //0.001000
     int posicionOne(String n1){
         int i=0;
-        if (n1!="") {
+        if (!n1.equals("")) {
             while ((n1.charAt(i) != '1') & (i < n1.length())) {
                 i++;
             }

@@ -69,14 +69,11 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                     mantisa=mantisa.substring(1,24);
                 if (exponente.length() >8)
                     exponente=exponente.substring(0,8) ;
-
-
                 bit2.setVisibility(View.VISIBLE);
                 bit4.setVisibility(View.VISIBLE);
                 bit3.setVisibility(View.GONE);
                 bit5.setVisibility(View.GONE);
                 bit1.setVisibility(View.VISIBLE);
-
                 if (mantisa != "") {
                     man.setText(mantisa);
                     exp.setText(exponente);
@@ -88,19 +85,13 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                             decimal = decimal + "."+ j + mantisa1.substring(k - 1);
                         else
                         decimal = decimal + "." + mantisa1.substring(k - 1);
-                       // decimal = nro.conversion(decimal, "2", "10");
+                        decimal = nro.conversion(decimal, "2", "10");
                     if (signo=="1")
                         decimal="-"+decimal;
-                        dec.setText(decimal);
-                } else {
-                    Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
-                }
-            } else {
-                Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
-            }
-        }else{
-            Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
-        }
+                        dec.setText(decimal); }
+                else { Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show(); }
+            } else { Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show(); }
+        }else{ Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show(); }
     }
 
     public void DoblePresicion(View view) {
