@@ -51,8 +51,8 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
             if ((nro.Enabled(numero, base)) && ((nro.ainteger(base) > 1) && (nro.ainteger(base) < 17))) {
         if (nro.VerifPunto(numero)) {
             decimal = nro.conversion(nro.ParteEntera(numero), base, "2");
-            if (nro.adouble(nro.conversion(numero, base, "2")) < 1)
-                j = nro.SimplePrecisionMan1(nro.conversion(numero, base, "2"));
+            //if (nro.adouble(nro.conversion(numero, base, "2")) < 1)
+                //j = nro.SimplePrecisionMan1(nro.conversion(numero, base, "2"));
 
         }else{
             decimal = nro.conversion(numero, base, "2");
@@ -64,7 +64,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                     exponente = nro.conversion(numero, base, "2");
                 mantisa = nro.SimplePrecisionMan(mantisa);
                 mantisa1 = nro.SimplePrecisionMan(mantisa);
-                exponente = nro.SimplePrecisionExp(exponente);
+                exponente = nro.SimplePrecisionExp2(exponente);
                 if (mantisa.length() >23)
                     mantisa=mantisa.substring(1,24);
                 if (exponente.length() >8)
@@ -88,7 +88,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                             decimal = decimal + "."+ j + mantisa1.substring(k - 1);
                         else
                         decimal = decimal + "." + mantisa1.substring(k - 1);
-                        decimal = nro.conversion(decimal, "2", "10");
+                       // decimal = nro.conversion(decimal, "2", "10");
                     if (signo=="1")
                         decimal="-"+decimal;
                         dec.setText(decimal);
