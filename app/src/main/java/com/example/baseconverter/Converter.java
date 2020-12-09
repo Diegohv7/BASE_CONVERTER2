@@ -1,5 +1,7 @@
 package com.example.baseconverter;
 
+import android.widget.Toast;
+
 public class Converter {
     int ainteger(String n) {
         return Integer.parseInt(n);
@@ -29,17 +31,20 @@ public class Converter {
     String abase(String n1, String b1) {
         String a = "0123456789ABCDEF";
         String resultado = "";
-        long n = Long.parseLong(n1);
-        long b = Long.parseLong(b1);
-        if (n==0)
-            resultado ="0";
-        while (n > 0) {
-            //  String truco=n%b+""; otro metodo a string
-            String truco = String.valueOf(n % b);
-            int dig = ainteger(truco);
-            n = n / b;
-            resultado = a.charAt(dig) + resultado;
-        }
+        if (n1.length()<19) {
+            long n = Long.parseLong(n1);
+            long b = Long.parseLong(b1);
+            if (n == 0)
+                resultado = "0";
+            while (n > 0) {
+                //  String truco=n%b+""; otro metodo a string
+                String truco = String.valueOf(n % b);
+                int dig = ainteger(truco);
+                n = n / b;
+                resultado = a.charAt(dig) + resultado;
+            }
+        }else
+           return "0";
         return resultado;
     }
 
@@ -96,7 +101,11 @@ public class Converter {
         while (k > 0) {
             int dig = ainteger(decodificar(n1.charAt(k - 1)));
             long val = dig * potencia(ainteger(b1), i);
+            if (astringlog(nu).length()<19 )
             nu = nu + val;
+            else{
+            nu = 0;
+            break;}
             i++;
             k--;
         }
@@ -332,11 +341,14 @@ public class Converter {
             n22 = adecimal(n2, b);
         else
             n22='-'+convertirnegativo(limpiar(n2),b,"10",bit);
-        Long r = along(n11) + along(n22);
-        if (astringlog(r).charAt(0)=='-')
-            res='-'+convertirnegativo(astringlog(r),"10",b,bit);
-        else
-            res = abase(astringlog(r), b);
+        if (n11.length()<19 & n22.length()<19 ) {
+            Long r = along(n11) + along(n22);
+            if (astringlog(r).charAt(0) == '-')
+                res = '-' + convertirnegativo(astringlog(r), "10", b, bit);
+            else
+                res = abase(astringlog(r), b);
+        }else
+            return "0";
         return res;
     }
 
@@ -353,16 +365,19 @@ public class Converter {
             n22 = adecimal(n2, b);
         else
             n22='-'+convertirnegativo(limpiar(n2),b,"10",bit);
-        Long r = along(n11) - along(n22);
-        if (ainteger(b)!=10) {
-            if (astringlog(r).charAt(0) == '-') {
-                n1 = abase(limpiar(astringlog(r)), "2");
-                bit = astringint(n1.length() + 1);
-                res = '-' + convertirnegativo(limpiar(astringlog(r)), "10", b, bit);
+        if (n11.length()<19 & n22.length()<19 ) {
+            Long r = along(n11) - along(n22);
+            if (ainteger(b) != 10) {
+                if (astringlog(r).charAt(0) == '-') {
+                    n1 = abase(limpiar(astringlog(r)), "2");
+                    bit = astringint(n1.length() + 1);
+                    res = '-' + convertirnegativo(limpiar(astringlog(r)), "10", b, bit);
+                } else
+                    res = abase(astringlog(r), b);
             } else
-                res = abase(astringlog(r), b);
+                res = astringlog(r);
         }else
-            res = astringlog(r);
+            return "0";
         return res;
     }
 
@@ -379,11 +394,14 @@ public class Converter {
             n22 = adecimal(n2, b);
         else
             n22='-'+convertirnegativo(limpiar(n2),b,"10",bit);
-        Long r = along(n11) * along(n22);
-        if (astringlog(r).charAt(0)=='-')
-            res='-'+convertirnegativo(astringlog(r),"10",b,bit);
-        else
-            res = abase(astringlog(r), b);
+        if (n11.length()<19 & n22.length()<19 ) {
+            Long r = along(n11) * along(n22);
+            if (astringlog(r).charAt(0) == '-')
+                res = '-' + convertirnegativo(astringlog(r), "10", b, bit);
+            else
+                res = abase(astringlog(r), b);
+        }else
+            return "0";
         return res;
     }
 
@@ -400,11 +418,14 @@ public class Converter {
             n22 = adecimal(n2, b);
         else
             n22='-'+convertirnegativo(limpiar(n2),b,"10",bit);
-        Long r = along(n11) / along(n22);
-        if (astringlog(r).charAt(0)=='-')
-            res='-'+convertirnegativo(astringlog(r),"10",b,bit);
-        else
-            res = abase(astringlog(r), b);
+        if (n11.length()<19 & n22.length()<19 ) {
+            Long r = along(n11) / along(n22);
+            if (astringlog(r).charAt(0) == '-')
+                res = '-' + convertirnegativo(astringlog(r), "10", b, bit);
+            else
+                res = abase(astringlog(r), b);
+        }else
+            return "0";
         return res;
     }
 
