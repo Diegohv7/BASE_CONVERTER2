@@ -30,7 +30,8 @@
     <string name="reporte">Report</string>
     <string name="soportetext">-CONVERSIONS: Enter a positive or negative, integer or fractional number to convert it on any base from 2 to 16. Remember there are no negative fractional numbers, and when you are working with negative numbers, you have to enter a quantity of bits to get a correct answer.\
         -OPERATIONS: Enter two positive integer numbers to do basic mathematical operations. Remember both numbers have to be on the same base. Not permitted to put negative or fractional numbers at the moment.\
-        -PRECISIONS: Enter a negative or positive, integer or fractional number and its base. In this option you wil be able to understand IEEE-754 FLOATING POINT numbers.</string>
+        -PRECISIONS: Enter a negative or positive, integer or fractional number and its base. In this option you wil be able to understand IEEE-754 FLOATING POINT numbers.\
+        *Important: Maximum Range(-2^63 ; (2^63)-1)</string>
     <string name="soportetitle">Support</string>
     <string name="contactustext">We are working every day to give you a better experience, send us your message.</string>
     <string name="contactuslink">Press the link!</string>
