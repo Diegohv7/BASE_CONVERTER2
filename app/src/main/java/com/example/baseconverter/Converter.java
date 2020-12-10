@@ -228,14 +228,14 @@ public class Converter {
         return n2;
     }
     //Convertir decimal fraccionario a otra base       //5.125    b=2
-    String abaseFraccionario(String n1, String b1) {
+    String abaseFraccionario(String n1, String b1,int bit) {
         n1 = "0." + n1;
         String nt = "0.";
         double nf = adouble(n1);    //0.125
-        int k = 32;
+        int k = bit;
         boolean b = true;
         if (ainteger(b1) != 10) {
-            while ((k > 0) & b) {  //12 bit de decimales
+            while ((k > 0) & b) {  //52 bit de decimales
                 nf = nf * ainteger(b1);//0.125*2=0.25
                 String pe = (verifNeg(astringdouble(nf)))?"0":ParteEntera(astringdouble(nf));   //pe=0
                 nt = nt + codificar(pe);
@@ -257,7 +257,7 @@ public class Converter {
             n2 = ParteFraccionaria(n1);//n2=F1
             n1 = ParteEntera(n1);     //n1=F
             n2 = adecimalFraccionaria(n2, b1);
-            n2 = abaseFraccionario(n2.substring(2), b2);
+            n2 = abaseFraccionario(n2.substring(2), b2,32);
         }
         if (ainteger(b1) != ainteger(b2)) {  //true
             if (ainteger(b1) != 10)       //true
@@ -433,16 +433,15 @@ public class Converter {
     }
 
     String SimplePrecisionMan(String n1) {   //n1 = 1
-        int k = 0;                              //k=0
+        int k = 0;
         String n2 = ParteFraccionaria(n1);   //
         String n3 = ParteEntera(n1);        //1
         String nr=n3+n2;                    //nr=1
-         if(posicionOne(n2) == 0)
-          k=posicionOne(n2);
+        k=(posicionOne(n2)==0)?posicionOne(n2):posicionOne(n2)+1;
         if (VerifPunto(n1) & k == 0)
             k++;                                          //k = 1
         if (nr.length()>1 )
-        nr=(!n3.equals("0"))?nr.substring(posicionOne(nr)+1):nr.substring(k);   //nr = 110
+        nr=(!n3.equals("0"))?nr.substring(posicionOne(nr)+1):nr.substring(k+1);   //nr = 110
         else
             nr="";
         while (nr.length() < 23) {
@@ -450,64 +449,24 @@ public class Converter {
         }
         return nr;
     }
-    String SimplePrecisionMan1(String n1) {
-        int k = 2;
-        String j="";
-       while(n1.charAt(k)=='0'){
-           j=j+"0";
-            k++;}
-       if (j!="")
-           j=j+"1";
-        return j;
-    }
-    //10001.010
-    /*String SimplePrecisionExp(String n1) {
-        int k = 0;
-        Double n3 = adouble(n1);
-        if (VerifPunto(n1)) {
-            String n2 = ParteEntera(n1);
-            if (!n2.equals("0"))
-                k = n2.length() - 1;
-            else {
-                //1.01
-                while (n3 < 0) {
-                    n3 = n3 * 10;
-                    //1
-                    k--;
-                   // k=-2
-                }
-            }
-        }else{
-            while (n3 > 10){
-                n3=n3/10;
-                k++;
-            }
-        }
-        n1 = astringlog((potencia(2, 8 - 1) + k) - 1);
-        n1 = conversion(n1, "10", "2");
-            while (n1.length() < 8) {
-                n1 = "0" + n1;
-            }
-        return n1;
-    }*/
-    //0.001000
+
     int posicionOne(String n1) {
-        int i = 0;
+        int pos = 0;
+        int i=0;
         //boolean b=false;
-        if (n1 != "") {
-            while ((n1.charAt(i) != '1') & (i < n1.length() - 1)) {
-                if (n1.charAt(i) == '1')
+        if (n1!="") {
+            while ((i < n1.length())) {
+                if (n1.charAt(i)=='1') {
+                    pos = i;
                     break;
+                }
                 i++;
             }
         }
-        if (n1.charAt(i) == '1')
-            return i;
-        else
-            return 0;
+            return pos;
     }
 
-    String SimplePrecisionExp2(String n1) {
+    String SimplePrecisionExp(String n1) {
         int k = 0;
         String n2=ParteFraccionaria(n1);
         String n3=ParteEntera(n1);
@@ -519,56 +478,54 @@ public class Converter {
         }
         return n1;
     }
-
+    String conversionDoble(String n1, String b1, String b2) {   //F.F1  b1=16   b2=10
+        String n2 = "";
+        if (VerifPunto(n1)) {    //true
+            n2 = ParteFraccionaria(n1);//n2=F1
+            n1 = ParteEntera(n1);     //n1=F
+            n2 = adecimalFraccionaria(n2, b1);
+            n2 = abaseFraccionario(n2.substring(2), b2,60);
+        }
+        if (ainteger(b1) != ainteger(b2)) {  //true
+            if (ainteger(b1) != 10)       //true
+                n1 = adecimal(n1, b1);
+            n1 = abase(n1, b2);
+        }
+        if (!n1.equals("") & (VerifPunto(n2)))
+            n2 = n2.substring(1);
+        return n1 + n2;
+    }
     String DoblePrecisionExp(String n1) {
         int k = 0;
-        Double n3 = adouble(n1);
-        if (VerifPunto(n1)) {
-            String n2 = ParteEntera(n1);
-            if (!n2.equals("0"))
-                k = n2.length() - 1;
-            else {
-                while (n3 < 1) {
-                    n3 = n3 * 10;
-                    k--;
-                }
-            }
-        }else{
-            while (n3 > 10){
-                n3=n3/10;
-                k++;
-            }
-        }
+        String n2=ParteFraccionaria(n1);
+        String n3=ParteEntera(n1);
+        k=(!n3.equals("0"))?n3.length()-1:-1*(posicionOne(n2)+1);
         n1 = astringlog((potencia(2, 11 - 1) + k) - 1);
         n1 = conversion(n1, "10", "2");
-        while (n1.length()<11){
-            n1="0"+n1;
+        while (n1.length() < 11) {
+            n1 = "0" + n1;
         }
         return n1;
     }
 
     String DoblePrecisionMan(String n1) {
-        int k=0;
-        if (adouble(n1) > 1) {
-            if (VerifPunto(n1))
-                n1 = ParteEntera(n1) + ParteFraccionaria(n1);
-            n1 = n1.substring(1);
-            while (n1.length() < 52) {
-                n1 = n1 + "0";
-            }
-        } else {
-            while (n1.charAt(k) != '1') {
-                k++;
-            }
-            n1 = n1.substring(k + 1);
-            while (n1.length() < 52) {
-                n1 = n1 + "0";
-            }
+        int k = 0;
+        String n2 = ParteFraccionaria(n1);   //
+        String n3 = ParteEntera(n1);        //1
+        String nr=n3+n2;                    //nr=1
+        k=(posicionOne(n2)==0)?posicionOne(n2):posicionOne(n2)+1;
+        if (VerifPunto(n1) & k == 0)
+            k++;                                          //k = 1
+        if (nr.length()>1 )
+            nr=(!n3.equals("0"))?nr.substring(posicionOne(nr)+1):nr.substring(k+1);   //nr = 110
+        else
+            nr="";
+        while (nr.length() < 52) {
+            nr = nr+'0';
         }
-
-        return n1;
+        return nr;
     }
-    String PrecisionSimpleHexa(String n1, String n2, String n3) {
+    String PrecisionHexa(String n1, String n2, String n3) {
        if (n1!="0")
         n2=conversion(n1+n2+n3,"2","16");
         else
@@ -580,10 +537,10 @@ public class Converter {
             n2=n1+n2+n3;
         else
             n2=n2+n3;
-       if (n2.length()==64 )
-           n2=conversion(n2.substring(0,32),"2", "16") +conversion(n2.substring(32,64),"2","16");
+        if (n2.length()==64 )
+            n2=conversion(n2.substring(0,32),"2", "16") +conversion(n2.substring(32,64),"2","16");
         else
-         n2=conversion(n2.substring(0,31),"2","16"  )+conversion(n2.substring(31,63),"2","16"  );
+            n2=conversion(n2.substring(0,31),"2","16"  )+conversion(n2.substring(31,63),"2","16"  );
         return n2;
     }
 }

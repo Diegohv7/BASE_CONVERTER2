@@ -34,22 +34,15 @@ public class Conversiones extends AppCompatActivity {
         String base1 = ba.getText().toString() + "";
         String base2 = bs.getText().toString() + "";
         String result = "ERROR";
-        long  num = 922337203;
-        String  num1 = "0";
-        //result=nro.astringint( nro.posicionOne(numero)) ;
-        result=nro.SimplePrecisionMan(numero) ;
-        resultado.setText(result);
-       /* if ((numero != "") & (base1 != "") & (base2 != "")) {
+
+        if ((numero != "") & (base1 != "") & (base2 != "")) {
             if ((nro.Enabled(numero, base1)) & (numero.charAt(0) != '-') & (nro.ainteger(base1) > 1) & (nro.ainteger(base1) < 17) & (nro.ainteger(base2) > 1) & (nro.ainteger(base2) < 17)) {
                 result = nro.conversion(numero, base1, base2);
                 resultado.setText(result);
             } else
                 Toast.makeText(getBaseContext(), "PLEASE ENTER THE DATA CORRECTLY", Toast.LENGTH_LONG).show();
         } else
-            Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();*/
-
-      //  if (nro.along(num)>nro.along(num1)){
-        //Toast.makeText(getBaseContext(), "NO SE PUEDE", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "DO NOT LEAVE BLANK SPACES", Toast.LENGTH_LONG).show();
 
     }
     public void convertirnegativo(View view) {
