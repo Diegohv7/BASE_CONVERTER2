@@ -66,16 +66,10 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                     decimal = nro.conversion(numero, base, "2");
                     b=false;
                 }
-                numero = nro.conversion(numero, base, "2");
+                numero = nro.conversion(numero, base, "2") ;
                 mantisa = nro.SimplePrecisionMan(numero);
                 exponente = nro.SimplePrecisionExp(numero);
-                //mantener longitud
-                if (mantisa.length() >23)
-                    mantisa=mantisa.substring(0,23);
-                if (exponente.length() >8)
-                    exponente=exponente.substring(0,7) ;
 
-                hexadecimal = nro.PrecisionHexa(signo, exponente, mantisa);
                 int pos=nro.EncontrarPunto(numero);
                 if ((b)&!(nro.ParteEntera(numero).equals("0")))
                     decimal = decimal + "." + mantisa.substring(pos - 1);
@@ -85,6 +79,16 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                 decimal = nro.conversion(decimal, "2", "10");
                 if (signo=="1")
                     decimal="-"+decimal;
+
+                //mantener longitud
+                if (mantisa.length() >23)
+                    mantisa=mantisa.substring(0,23);
+                if (exponente.length() >8)
+                    exponente=exponente.substring(0,7) ;
+
+                //resultado en hexadecimal con los valores exactos
+                hexadecimal = nro.PrecisionHexa(signo, exponente, mantisa);
+
                 //mostrar bits
                 //imprimir
                 MostrarBits();
@@ -122,13 +126,7 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                 numero = nro.conversionDoble(numero, base, "2");
                 mantisa = nro.DoblePrecisionMan(numero);
                 exponente = nro.DoblePrecisionExp(numero);
-                //mantener longitud
-                if (mantisa.length() >52)
-                    mantisa=mantisa.substring(0,52);
-                if (exponente.length() >11)
-                    exponente=exponente.substring(0,10) ;
 
-                hexadecimal = nro.PrecisionDobleHexa(signo, exponente, mantisa);
                 int pos=nro.EncontrarPunto(numero);
                 if ((b)&!(nro.ParteEntera(numero).equals("0")))
                     decimal = decimal + "." + mantisa.substring(pos - 1);
@@ -138,6 +136,14 @@ public class Precisiones extends AppCompatActivity { //implements View.OnClickLi
                 decimal = nro.conversion(decimal, "2", "10");
                 if (signo=="1")
                     decimal="-"+decimal;
+                //mantener longitud
+                if (mantisa.length() >52)
+                    mantisa=mantisa.substring(0,52);
+                if (exponente.length() >11)
+                    exponente=exponente.substring(0,10) ;
+                //resultado en hexadecimal con los valores exactos
+                hexadecimal = nro.PrecisionDobleHexa(signo, exponente, mantisa);
+
                 //mostrar bits
                 //imprimir
                 MostrarBits2();
