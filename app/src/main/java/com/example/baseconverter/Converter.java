@@ -432,16 +432,17 @@ public class Converter {
         return res;
     }
 
-    String SimplePrecisionMan(String n1) {   //n1 = 11.0
+    String SimplePrecisionMan(String n1) {   //n1 = 1
         int k = 0;                              //k=0
-        String n2 = ParteFraccionaria(n1);   //0
-        String n3 = ParteEntera(n1);        //11
-        k = (posicionOne(n2) == 0) ? posicionOne(n2) : posicionOne(n2) + 1;   //k=1
-        String nr=n3+n2;                                          //nr=110
+        String n2 = ParteFraccionaria(n1);   //
+        String n3 = ParteEntera(n1);        //1
+        String nr=n3+n2;                    //nr=1
+         if(posicionOne(n2) == 0)
+          k=posicionOne(n2);
         if (VerifPunto(n1) & k == 0)
             k++;                                          //k = 1
-        if (nr.length()>=1 )
-        nr=(!n3.equals("0"))?nr.substring(posicionOne(nr)):nr.substring(k);   //nr = 110
+        if (nr.length()>1 )
+        nr=(!n3.equals("0"))?nr.substring(posicionOne(nr)+1):nr.substring(k);   //nr = 110
         else
             nr="";
         while (nr.length() < 23) {
@@ -490,14 +491,20 @@ public class Converter {
         return n1;
     }*/
     //0.001000
-    int posicionOne(String n1){
-        int i=0;
-        if (!n1.equals("")) {
-            while ((n1.charAt(i) != '1') & (i < n1.length())) {
+    int posicionOne(String n1) {
+        int i = 0;
+        //boolean b=false;
+        if (n1 != "") {
+            while ((n1.charAt(i) != '1') & (i < n1.length() - 1)) {
+                if (n1.charAt(i) == '1')
+                    break;
                 i++;
             }
         }
-        return i;
+        if (n1.charAt(i) == '1')
+            return i;
+        else
+            return 0;
     }
 
     String SimplePrecisionExp2(String n1) {
