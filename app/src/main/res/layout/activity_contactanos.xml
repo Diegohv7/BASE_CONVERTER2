@@ -31,9 +31,7 @@
         android:layout_width="328dp"
         android:layout_height="74dp"
         android:layout_below="@+id/textView13"
-        android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="37dp"
         android:layout_marginTop="76dp"
         android:text="@string/contactustext"
         android:textIsSelectable="true"
@@ -80,6 +78,6 @@
         android:textColorHighlight="#303F9F"
         android:textColorLink="#1976D2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@id/textVieweEmail" />
 
 </RelativeLayout>
