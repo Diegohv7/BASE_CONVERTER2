@@ -16,7 +16,7 @@
         android:ems="10"
         android:hint="@string/numero1"
         android:inputType="textPersonName"
-        android:textIsSelectable="true" />
+        android:textIsSelectable="false" />
 
     <EditText
         android:id="@+id/editText5"
@@ -28,7 +28,7 @@
         android:ems="10"
         android:hint="@string/numero2"
         android:inputType="textPersonName"
-        android:textIsSelectable="true" />
+        android:textIsSelectable="false" />
 
     <EditText
         android:id="@+id/editText6"

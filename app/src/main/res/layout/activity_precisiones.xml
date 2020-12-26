@@ -48,7 +48,7 @@
         android:ems="10"
         android:hint="@string/ingresarnumero"
         android:inputType="textCapCharacters"
-        android:textIsSelectable="true"
+        android:textIsSelectable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +63,7 @@
         android:ems="10"
         android:hint="Base 2-16"
         android:inputType="number"
-        android:textIsSelectable="true"
+        android:textIsSelectable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

@@ -16,7 +16,7 @@
         android:ems="10"
         android:hint="@string/ingresarnumero"
         android:inputType="textCapCharacters"
-        android:textIsSelectable="true"
+        android:textIsSelectable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="199dp" />
@@ -34,7 +34,7 @@
         android:ems="10"
         android:hint="2-16"
         android:inputType="number"
-        android:textIsSelectable="true"
+        android:textIsSelectable="false"
         tools:layout_editor_absoluteX="121dp"
         tools:layout_editor_absoluteY="270dp" />
 
@@ -63,7 +63,7 @@
         android:ems="10"
         android:hint="2-16"
         android:inputType="number"
-        android:textIsSelectable="true"
+        android:textIsSelectable="false"
         tools:layout_editor_absoluteX="213dp"
         tools:layout_editor_absoluteY="271dp" />
 
@@ -89,7 +89,7 @@
         android:ems="10"
         android:hint="Max 60"
         android:inputType="number"
-        android:textIsSelectable="true"
+        android:textIsSelectable="false"
         android:textSize="13sp"
         tools:layout_editor_absoluteX="213dp"
         tools:layout_editor_absoluteY="271dp" />
