@@ -1,6 +1,4 @@
-package com.example.baseconverter;
-
-import androidx.appcompat.app.AppCompatActivity;
+package apps.ejemplo.baseconverter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +6,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+
+import apps.ejemplo.baseconverter.R;
 
 public class intro extends Activity  {
 

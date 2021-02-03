@@ -1,4 +1,4 @@
-package com.example.baseconverter;
+package apps.ejemplo.baseconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
+
+import apps.ejemplo.baseconverter.R;
 
 public class Contactanos extends AppCompatActivity {
 

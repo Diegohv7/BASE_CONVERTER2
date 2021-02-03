@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.baseconverter">
+    package="apps.ejemplo.baseconverter">
 
     <application
         android:allowBackup="true"
@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Contactanos"></activity>
-        <activity android:name=".Soporte" />
-        <activity android:name=".Precisiones" />
-        <activity android:name=".operaciones" />
-        <activity android:name=".Conversiones" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".intro">
+        <activity android:name="apps.ejemplo.baseconverter.Contactanos"></activity>
+        <activity android:name="apps.ejemplo.baseconverter.Soporte" />
+        <activity android:name="apps.ejemplo.baseconverter.Precisiones" />
+        <activity android:name="apps.ejemplo.baseconverter.operaciones" />
+        <activity android:name="apps.ejemplo.baseconverter.Conversiones" />
+        <activity android:name="apps.ejemplo.baseconverter.MainActivity" />
+        <activity android:name="apps.ejemplo.baseconverter.intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

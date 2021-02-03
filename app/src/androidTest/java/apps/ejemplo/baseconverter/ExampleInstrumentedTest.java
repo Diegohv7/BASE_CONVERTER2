@@ -1,4 +1,4 @@
-package com.example.baseconverter;
+package apps.ejemplo.baseconverter;
 
 import android.content.Context;
 

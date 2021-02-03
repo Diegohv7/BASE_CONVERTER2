@@ -8,7 +8,7 @@
     android:scrollbarAlwaysDrawVerticalTrack="true"
     android:scrollbarStyle="insideInset"
     android:scrollbars="vertical"
-    tools:context=".Soporte">
+    tools:context="apps.ejemplo.baseconverter.Soporte">
 
     <TextView
         android:id="@+id/textView10"

@@ -1,4 +1,4 @@
-package com.example.baseconverter;
+package apps.ejemplo.baseconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import apps.ejemplo.baseconverter.R;
 
 public class Precisiones extends AppCompatActivity { //implements View.OnClickListener {
     EditText nu, ba;

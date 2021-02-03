@@ -1,6 +1,4 @@
-package com.example.baseconverter;
-
-import android.widget.Toast;
+package apps.ejemplo.baseconverter;
 
 public class Converter {
     int ainteger(String n) {

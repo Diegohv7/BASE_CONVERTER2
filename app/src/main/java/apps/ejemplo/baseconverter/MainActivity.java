@@ -1,4 +1,4 @@
-package com.example.baseconverter;
+package apps.ejemplo.baseconverter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+
+import apps.ejemplo.baseconverter.R;
 
 
 public class MainActivity extends AppCompatActivity {

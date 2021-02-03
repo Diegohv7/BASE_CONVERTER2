@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Contactanos">
+    tools:context="apps.ejemplo.baseconverter.Contactanos">
 
     <TextView
         android:id="@+id/textView26"
@@ -74,7 +74,7 @@
         android:layout_marginStart="128dp"
         android:layout_marginLeft="128dp"
         android:layout_marginTop="112dp"
-        android:text="TextView"
+        android:text="@string/correo"
         android:textColorHighlight="#303F9F"
         android:textColorLink="#1976D2"
         app:layout_constraintStart_toStartOf="parent"

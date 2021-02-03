@@ -37,4 +37,5 @@
     <string name="contactustext">Estamos trabajando todos los días para darte una mejor experiencia, envianos tu mensaje.</string>
     <string name="contactuslink">¡Presione el enlace!</string>
     <string name="link">textviewemail</string>
+    <string name="correo"></string>
 </resources>
