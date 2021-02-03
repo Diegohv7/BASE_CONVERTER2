@@ -1,4 +1,4 @@
-package apps.ejemplo.baseconverter;
+package apps.ejemplos.baseconverter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import apps.ejemplo.baseconverter.R;
+import apps.ejemplos.baseconverter.R;
 
 
 public class MainActivity extends AppCompatActivity {

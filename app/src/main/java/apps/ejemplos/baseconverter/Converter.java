@@ -1,4 +1,4 @@
-package apps.ejemplo.baseconverter;
+package apps.ejemplos.baseconverter;
 
 public class Converter {
     int ainteger(String n) {

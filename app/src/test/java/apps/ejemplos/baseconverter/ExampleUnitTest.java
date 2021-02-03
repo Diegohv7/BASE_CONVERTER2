@@ -1,4 +1,4 @@
-package apps.ejemplo.baseconverter;
+package apps.ejemplos.baseconverter;
 
 import org.junit.Test;
 

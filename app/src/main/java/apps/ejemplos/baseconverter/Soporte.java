@@ -1,10 +1,10 @@
-package apps.ejemplo.baseconverter;
+package apps.ejemplos.baseconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import apps.ejemplo.baseconverter.R;
+import apps.ejemplos.baseconverter.R;
 
 public class Soporte extends AppCompatActivity {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:onClick="SimplePresicion"
-    tools:context="apps.ejemplo.baseconverter.Precisiones">
+    tools:context="apps.ejemplos.baseconverter.Precisiones">
 
     <Button
         android:id="@+id/button11"
