@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import apps.ejemplos.baseconverter.R;
-
+ // Comentario
 public class Conversiones extends AppCompatActivity {
     EditText n, ba, bs, bits;
     TextView resultado;
